@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Inveon\\InveonBootcamp\\InveonBootcamp\\InveonBootcamp.csproj",
+      "projectUniqueName": "C:\\Inveon\\InveonBootcamp\\InveonBootcamp.csproj",
       "projectName": "InveonBootcamp",
-      "projectPath": "C:\\Inveon\\InveonBootcamp\\InveonBootcamp\\InveonBootcamp.csproj",
+      "projectPath": "C:\\Inveon\\InveonBootcamp\\InveonBootcamp.csproj",
       "packagesPath": "C:\\Users\\Ali Öztürk\\.nuget\\packages\\",
-      "outputPath": "C:\\Inveon\\InveonBootcamp\\InveonBootcamp\\obj\\",
+      "outputPath": "C:\\Inveon\\InveonBootcamp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
