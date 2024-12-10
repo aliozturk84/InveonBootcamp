@@ -1,0 +1,6 @@
+# Visual Studio meta verileri
+.vs/
+
+# Derleme klasörleri
+bin/
+obj/
