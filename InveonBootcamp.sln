@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InveonBootcamp", "InveonBootcamp\InveonBootcamp.csproj", "{0BEBF3C7-AB51-4A65-9652-E21299BA2DA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InveonBootcamp", "InveonBootcamp\InveonBootcamp.csproj", "{0BEBF3C7-AB51-4A65-9652-E21299BA2DA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagement.API", "LibraryManagement.API\LibraryManagement.API.csproj", "{DC60697A-7AB4-4B3E-B61C-D087B6053C12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Async", "Async\Async.csproj", "{B521C73F-5E40-466D-B443-6E747EB20551}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0BEBF3C7-AB51-4A65-9652-E21299BA2DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BEBF3C7-AB51-4A65-9652-E21299BA2DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BEBF3C7-AB51-4A65-9652-E21299BA2DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC60697A-7AB4-4B3E-B61C-D087B6053C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC60697A-7AB4-4B3E-B61C-D087B6053C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC60697A-7AB4-4B3E-B61C-D087B6053C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC60697A-7AB4-4B3E-B61C-D087B6053C12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B521C73F-5E40-466D-B443-6E747EB20551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B521C73F-5E40-466D-B443-6E747EB20551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B521C73F-5E40-466D-B443-6E747EB20551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B521C73F-5E40-466D-B443-6E747EB20551}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
