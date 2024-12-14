@@ -4,3 +4,7 @@
 # Derleme klasörleri
 bin/
 obj/
+
+# AssemblyInfo ve benzeri meta veriler
+**/obj/**/AssemblyInfo.cs
+**/obj/**/AssemblyInfoInputs.cache
