@@ -4,3 +4,6 @@
 # Derleme klasörleri
 bin/
 obj/
+
+**/obj/**/AssemblyInfo.cs
+**/obj/**/AssemblyInfoInputs.cache
