@@ -9,112 +9,102 @@ using System.Security.Claims;
 
 namespace LibraryManagementApp.Web.Controllers
 {
-    public class HomeController(
-       UserManager<AppUser> userManager,
-       RoleManager<AppRole> roleManager,
-       SignInManager<AppUser> signInManager) : Controller
+    public class HomeController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager) : Controller
     {
-       
-        public IActionResult AccessDenied()
-        {
-            return View();
-        }
+        private readonly SignInManager<AppUser> _signInManager = signInManager;
+        private readonly UserManager<AppUser> _userManager = userManager;
+
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public async Task<IActionResult> Login()
+
+        public IActionResult Register()
         {
-            var email = "drazing84@outlook.com";
-            var password = "Drazing84*";
+            return View();
+        }
 
 
-            var hasUser = await userManager.FindByEmailAsync(email);
+        public IActionResult Login()
+        {
+            return View();
+        }
+        
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
 
 
-            if (hasUser == null)
+        [HttpPost]
+        public async Task<IActionResult> Register(AppUser user, string password)
+        {
+            if (!ModelState.IsValid)
             {
-                ModelState.AddModelError(string.Empty, "Email veya sifre yanlis");
+                return View(user);
             }
 
-            var passwordCheck = await userManager.CheckPasswordAsync(hasUser, password);
-
-            if (!passwordCheck)
+            var result = await _userManager.CreateAsync(user, password);
+            if (result.Succeeded)
             {
-                ModelState.AddModelError(string.Empty, "Email veya sifre yanlis");
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                return RedirectToAction("Index", "Home");
             }
 
-
-            await signInManager.SignInAsync(hasUser, new AuthenticationProperties() { IsPersistent = true });
-
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        public async Task<IActionResult> AddClaimToUser()
-        {
-            var user = await userManager.FindByNameAsync("drazing84");
-
-            await userManager.AddClaimAsync(user,
-                new Claim("city", "istanbul"));
-
-
-            userManager.UpdateSecurityStampAsync(user);
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        public async Task<IActionResult> AddRoleToUser()
-        {
-            var newRole = new AppRole()
+            foreach (var error in result.Errors)
             {
-                Name = "Admin"
-            };
-
-            var response = await roleManager.CreateAsync(newRole);
-
-
-            var user = await userManager.FindByNameAsync("drazing84");
-
-
-            await userManager.AddToRoleAsync(user, "Admin");
-
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        public async Task<IActionResult> UserCreate()
-        {
-            var appUse = new AppUser()
-            {
-                UserName = "drazing84",
-                Email = "drazing84@outlook.com",
-            };
-
-
-            var identityResult = await userManager.CreateAsync(appUse, "Drazing84*");
-
-
-            if (!identityResult.Succeeded)
-            {
+                ModelState.AddModelError(string.Empty, error.Description);
             }
 
-            return RedirectToAction("Index", "Home");
+            return View(user);
         }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Login(string email, string password)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                ModelState.AddModelError(string.Empty, "Kullanýcý bulunamadý!");
+                return View();
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(user, password, true, false);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError(string.Empty, "Giriþ baþarýsýz!");
+                return View();
+            }
+
+            TempData["SuccessMessage"] = "Baþarýyla giriþ yaptýnýz! Hoþ geldiniz.";
+            return RedirectToAction("Index");
+        }
+
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+
+            TempData["SuccessMessage"] = "Baþarýyla çýkýþ yaptýnýz.";
+            return RedirectToAction("Index");
+        }
+
 
         [Authorize(Roles = "Admin")]
         public IActionResult Privacy()
         {
-
             var claims = User.Claims;
-
             var roles = claims.Where(x => x.Type == ClaimTypes.Role).ToList();
-
-
             var userName = User.Identity.Name;
             var userId = claims.First(x => x.Type == ClaimTypes.NameIdentifier).Value;
+
+            ViewData["Roles"] = roles;
+            ViewData["UserName"] = userName;
+            ViewData["UserId"] = userId;
 
             return View();
         }

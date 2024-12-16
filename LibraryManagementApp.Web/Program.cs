@@ -22,7 +22,7 @@ builder.Services.ConfigureApplicationCookie(opt =>
         Name = "InveonAppCookie"
     };
 
-    opt.LoginPath = new PathString("/Home/x-Login");
+    opt.LoginPath = new PathString("/Home/Login");
     //opt.LogoutPath = new PathString("/Member/logout");
     opt.AccessDeniedPath = new PathString("/Home/AccessDenied");
     opt.Cookie = cookieBuilder;

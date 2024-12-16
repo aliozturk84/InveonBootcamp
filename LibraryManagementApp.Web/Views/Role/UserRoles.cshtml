@@ -1,0 +1,76 @@
+﻿@model Dictionary<AppUser, List<string>>
+
+@{
+    ViewData["Title"] = "UserRoles";
+}
+
+<div class="container mt-5">
+    <!-- Ana Kart -->
+    <div class="card shadow-lg border-0">
+        <!-- Kart Başlık -->
+        <div class="card-header bg-gradient bg-primary text-white text-center py-3 shadow-sm rounded-top">
+            <h2 class="mb-0 fw-bold">
+                <i class="bi bi-people-fill me-2"></i> Kullanıcılar ve Rolleri
+            </h2>
+        </div>
+
+        <!-- Kart İçerik -->
+        <div class="card-body p-4 bg-light">
+            <!-- Tablo -->
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered align-middle shadow-sm mb-0">
+                    <thead class="table-dark">
+                        <tr>
+                            <th class="text-center fw-bold">Kullanıcı Adı</th>
+                            <th class="text-center fw-bold">Roller</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <!-- Kullanıcı Adı -->
+                                <td class="fw-bold text-center text-secondary">
+                                    <i class="bi bi-person-circle text-primary"></i>
+                                    @item.Key.UserName
+                                </td>
+
+                                <!-- Roller -->
+                                <td class="text-center">
+                                    @if (item.Value.Any())
+                                    {
+                                        <ul class="list-inline mb-0">
+                                            @foreach (var role in item.Value)
+                                            {
+                                                <li class="list-inline-item">
+                                                    <span class="badge bg-success p-2">
+                                                        <i class="bi bi-check-circle me-1"></i> @role
+                                                    </span>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted fst-italic">Rol atanmamış</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Kart Alt Bilgi ve Geri Dön Butonu -->
+        <div class="card-footer d-flex justify-content-between bg-white py-3">
+            <small class="text-muted align-self-center">
+                <i class="bi bi-info-circle"></i> Kullanıcı ve roller bilgileri burada listelenmektedir.
+            </small>
+            <!-- Geri Dön Butonu -->
+            <a asp-action="Index" asp-controller="Role" class="btn btn-secondary btn-sm">
+                <i class="bi bi-arrow-left-circle"></i> Geri Dön
+            </a>
+        </div>
+    </div>
+</div>

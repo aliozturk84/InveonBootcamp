@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<AppRole>
+
+
+<div class="container mt-5">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Roller Listesi</h2>
+
+        <!-- Başarı Mesajı -->
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show text-center shadow-sm" role="alert">
+                <i class="bi bi-check-circle"></i> @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="d-flex justify-content-end mb-3">
+            <!-- Kullanıcı Rolleri Butonu -->
+            <a asp-action="UserRoles" class="btn btn-info me-2">Tüm Kullanıcıların Rolleri</a>
+
+            <!-- Rol Ekle Butonu -->
+            <a asp-action="Create" class="btn btn-success">+ Rol Ekle</a>
+        </div>
+
+
+        <table class="table table-striped table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Rol İsmi</th>
+                    <th>Güncelle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>@role.Name</td>
+                        <td>
+                            <!-- Güncelleme Linki -->
+                            <a asp-action="Update" asp-route-id="@role.Id" class="btn btn-primary btn-sm">Güncelle</a>
+                        </td>
+                        <td>
+                            <!-- Silme Formu -->
+                            <form asp-action="Delete" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@role.Id" />
+                                <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

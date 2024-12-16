@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="card shadow-lg border-0" style="width: 25rem; border-radius: 15px;">
+        <!-- Üst Kısım Başlık -->
+        <div class="card-header text-white text-center" style="background: linear-gradient(to right, #007bff, #004085); border-top-left-radius: 15px; border-top-right-radius: 15px;">
+            <h3 class="mb-0">🔐</h3>
+        </div>
+
+        <!-- Form Alanı -->
+        <div class="card-body">
+            <form asp-action="Login" method="post">
+                <!-- Email Input -->
+                <div class="mb-4">
+                    <label for="email" class="form-label fw-bold text-secondary">📧 Email</label>
+                    <input type="email" id="email" name="email" class="form-control form-control-lg" placeholder="Email adresinizi girin" required />
+                </div>
+
+                <!-- Password Input -->
+                <div class="mb-4">
+                    <label for="password" class="form-label fw-bold text-secondary">🔑 Şifre</label>
+                    <input type="password" id="password" name="password" class="form-control form-control-lg" placeholder="Şifrenizi girin" required />
+                </div>
+
+                <!-- Submit Button -->
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Giriş Yap
+                    </button>
+                </div>
+            </form>
+
+            <!-- Error Message -->
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger mt-3 text-center" role="alert">
+                    ❌ Giriş başarısız! Lütfen bilgilerinizi kontrol edin.
+                </div>
+            }
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer text-center text-muted" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+            <small>Henüz hesabınız yok mu? <a href="/Home/Register" class="text-primary fw-bold">Kayıt Ol</a></small>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Update";
+}
+
+@model AppUser
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show text-center shadow-sm mb-3" role="alert">
+                    <i class="bi bi-check-circle"></i> @ViewBag.SuccessMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            <!-- Card Yapısı -->
+            <div class="card shadow-lg border-0">
+                <!-- Kart Başlığı -->
+                <div class="card-header bg-warning text-white text-center">
+                    <h2 class="fw-bold mb-0">
+                        <i class="bi bi-pencil-square"></i> Kullanıcı Bilgilerini Güncelle
+                    </h2>
+                </div>
+
+                <!-- Kart İçeriği -->
+                <div class="card-body p-4">
+                    <form asp-action="Update" method="post" class="needs-validation" novalidate>
+                        <!-- Kullanıcı Adı -->
+                        <div class="mb-4">
+                            <label for="username" class="form-label fw-bold">
+                                <i class="bi bi-person"></i> Kullanıcı Adı
+                            </label>
+                            <input asp-for="UserName" id="username" class="form-control form-control-lg"
+                                   placeholder="Kullanıcı adını giriniz" required />
+                            <span asp-validation-for="UserName" class="text-danger small"></span>
+                            <div class="invalid-feedback">Lütfen bir kullanıcı adı giriniz.</div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label for="email" class="form-label fw-bold">
+                                <i class="bi bi-envelope"></i> Email
+                            </label>
+                            <input asp-for="Email" id="email" class="form-control form-control-lg"
+                                   placeholder="Email adresinizi giriniz" required />
+                            <span asp-validation-for="Email" class="text-danger small"></span>
+                            <div class="invalid-feedback">Lütfen geçerli bir email adresi giriniz.</div>
+                        </div>
+
+                        <!-- Güncelle Butonu -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg me-2">
+                                <i class="bi bi-check-circle"></i> Bilgileri Güncelle
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary btn-lg">
+                                <i class="bi bi-arrow-left-circle"></i> Geri Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Form Validation Script -->
+<script>
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>

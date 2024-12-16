@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show text-center shadow-sm mb-3" role="alert">
+                    <i class="bi bi-check-circle"></i> @ViewBag.SuccessMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            <div class="card shadow-lg border-0">
+                <!-- Kart Başlığı -->
+                <div class="card-header bg-primary text-white text-center">
+                    <h2 class="fw-bold mb-0">
+                        <i class="bi bi-person-plus-fill"></i> Yeni Kullanıcı Ekle
+                    </h2>
+                </div>
+
+                <!-- Kart İçeriği -->
+                <div class="card-body p-4">
+                    <form asp-action="Create" method="post" class="needs-validation" novalidate>
+                        <!-- Kullanıcı Adı -->
+                        <div class="mb-4">
+                            <label for="username" class="form-label fw-bold">
+                                <i class="bi bi-person"></i> Kullanıcı Adı
+                            </label>
+                            <input type="text" name="UserName" id="username"
+                                   class="form-control form-control-lg"
+                                   placeholder="Kullanıcı adını giriniz" required />
+                            <div class="invalid-feedback">Lütfen kullanıcı adı giriniz.</div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-4">
+                            <label for="email" class="form-label fw-bold">
+                                <i class="bi bi-envelope"></i> Email
+                            </label>
+                            <input type="email" name="Email" id="email"
+                                   class="form-control form-control-lg"
+                                   placeholder="Email adresini giriniz" required />
+                            <div class="invalid-feedback">Lütfen geçerli bir email adresi giriniz.</div>
+                        </div>
+
+                        <!-- Şifre -->
+                        <div class="mb-4">
+                            <label for="password" class="form-label fw-bold">
+                                <i class="bi bi-lock-fill"></i> Şifre
+                            </label>
+                            <input type="password" name="Password" id="password"
+                                   class="form-control form-control-lg"
+                                   placeholder="Şifreyi giriniz" required />
+                            <div class="invalid-feedback">Lütfen bir şifre giriniz.</div>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg me-2">
+                                <i class="bi bi-check-circle"></i> Kullanıcı Ekle
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary btn-lg">
+                                <i class="bi bi-arrow-left-circle"></i> Geri Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Form Validation Script -->
+<script>
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
