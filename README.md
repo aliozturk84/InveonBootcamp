@@ -4,6 +4,7 @@ Bu proje, **Identity** işlemlerinin (**kullanıcı yönetimi**, **rol yönetimi
 ---
 
 ## 📃 Proje İçeriği
+- Projeyle ilgili tüm görseller en aşağıda mevcuttur.
 - **Admin** kullanıcısına otomatik olarak **admin rolü** atanır.
 - **Ziyaretçi** kullanıcısına otomatik olarak **ziyaretçi rolü** atanır.
 - 10 adet dummy kitap verisi ile başlangıç verisi sağlanır.
