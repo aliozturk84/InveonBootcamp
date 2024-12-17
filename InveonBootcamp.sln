@@ -5,7 +5,12 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InveonBootcamp", "InveonBootcamp\InveonBootcamp.csproj", "{0BEBF3C7-AB51-4A65-9652-E21299BA2DA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryManagementApp.Web", "LibraryManagementApp.Web\LibraryManagementApp.Web.csproj", "{F4752250-4FDE-487E-BAD8-B02968ECF1F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibraryManagementApp.Web", "LibraryManagementApp.Web\LibraryManagementApp.Web.csproj", "{F4752250-4FDE-487E-BAD8-B02968ECF1F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{863FC760-6C08-4402-95AB-2E8318735149}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,5 @@
 using LibraryManagementApp.Web.Models;
-using LibraryManagementApp.Web.Models.Repositories;
+using LibraryManagementApp.Web.Models.Entities;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

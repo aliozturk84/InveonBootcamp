@@ -1,4 +1,4 @@
-﻿namespace LibraryManagementApp.Web.Models.Repositories
+﻿namespace LibraryManagementApp.Web.Models.Entities
 {
     public class UserFeature
     {

@@ -52,6 +52,12 @@
                                 <i class="bi bi-shield-lock"></i> Roles
                             </a>
                         </li>
+                        <!-- Books -->
+                        <li class="nav-item">
+                            <a class="nav-link text-success" asp-controller="Book" asp-action="Index">
+                                <i class="bi bi-book"></i> Books
+                            </a>
+                        </li>
                     </ul>
                     @if (User.Identity.IsAuthenticated)
                     {

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show text-center shadow-sm" role="alert">
+        <i class="bi bi-check-circle-fill"></i> @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="container mt-5">
+    <!-- Başlık ve Arama Alanı -->
+    <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+            <h2 class="fw-bold text-primary">
+                <i class="bi bi-book"></i> Kitaplar
+            </h2>
+        </div>
+        <div class="col-md-6 text-end">
+            <a asp-action="Create" asp-controller="Book" class="btn btn-success btn-lg">
+                <i class="bi bi-plus-circle"></i> Yeni Kitap Ekle
+            </a>
+        </div>
+    </div>
+
+    <!-- Arama Formu -->
+    <form asp-action="Search" method="get" class="mb-4">
+        <div class="input-group shadow-sm">
+            <input type="text" name="searchText" class="form-control" placeholder="Kitap Ara..." />
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-search"></i> Ara
+            </button>
+        </div>
+    </form>
+
+    <!-- Kitap Listesi Tablosu -->
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0 text-center fw-bold">Kütüphane Kitapları</h4>
+        </div>
+        <div class="card-body p-4">
+            <table class="table table-hover table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th class="text-center">Kitap Adı</th>
+                        <th class="text-center">Yazar</th>
+                        <th class="text-center">Yayın Yılı</th>
+                        <th class="text-center">ISBN</th>
+                        <th class="text-center">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var book in Model)
+                    {
+                        <tr>
+                            <td class="text-center fw-bold">@book.Title</td>
+                            <td class="text-center">@book.Author</td>
+                            <td class="text-center">@book.PublicationYear</td>
+                            <td class="text-center">@book.ISBN</td>
+                            <td class="text-center">
+                                <a asp-action="Details" asp-route-id="@book.Id" class="btn btn-info btn-sm">
+                                    <i class="bi bi-eye"></i> Detaylar
+                                </a>
+                                <a asp-action="Update" asp-route-id="@book.Id" class="btn btn-primary btn-sm">
+                                    <i class="bi bi-pencil"></i> Düzenle
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@book.Id" class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i> Sil
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,160 @@
+﻿@model Book
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0">
+                <!-- Kart Başlığı -->
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h2 class="fw-bold mb-0">
+                        <i class="bi bi-pencil-square"></i> Kitap Güncelle
+                    </h2>
+                </div>
+
+                <!-- Kart Gövdesi -->
+                <div class="card-body p-4">
+                    <form asp-action="Update" method="post" class="needs-validation" novalidate>
+                        <input type="hidden" asp-for="Id" />
+
+                        <!-- Kitap Adı -->
+                        <div class="mb-4">
+                            <label for="title" class="form-label fw-bold">
+                                <i class="bi bi-book"></i> Kitap Adı
+                            </label>
+                            <input asp-for="Title" id="title" class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen kitap adını giriniz.</div>
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+
+                        <!-- Yazar -->
+                        <div class="mb-4">
+                            <label for="author" class="form-label fw-bold">
+                                <i class="bi bi-person"></i> Yazar
+                            </label>
+                            <input asp-for="Author" id="author" class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen yazar adını giriniz.</div>
+                            <span asp-validation-for="Author" class="text-danger"></span>
+                        </div>
+
+                        <!-- Yayın Yılı -->
+                        <div class="mb-4">
+                            <label for="publicationYear" class="form-label fw-bold">
+                                <i class="bi bi-calendar"></i> Yayın Yılı
+                            </label>
+                            <input asp-for="PublicationYear" id="publicationYear" type="number"
+                                   class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen yayın yılını giriniz.</div>
+                            <span asp-validation-for="PublicationYear" class="text-danger"></span>
+                        </div>
+
+                        <!-- ISBN -->
+                        <div class="mb-4">
+                            <label for="isbn" class="form-label fw-bold">
+                                <i class="bi bi-barcode"></i> ISBN
+                            </label>
+                            <input asp-for="ISBN" id="isbn" class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen ISBN numarasını giriniz.</div>
+                            <span asp-validation-for="ISBN" class="text-danger"></span>
+                        </div>
+
+                        <!-- Tür -->
+                        <div class="mb-4">
+                            <label for="genre" class="form-label fw-bold">
+                                <i class="bi bi-tags"></i> Tür
+                            </label>
+                            <input asp-for="Genre" id="genre" class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen kitabın türünü giriniz.</div>
+                            <span asp-validation-for="Genre" class="text-danger"></span>
+                        </div>
+
+                        <!-- Yayıncı -->
+                        <div class="mb-4">
+                            <label for="publisher" class="form-label fw-bold">
+                                <i class="bi bi-building"></i> Yayıncı
+                            </label>
+                            <input asp-for="Publisher" id="publisher" class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen yayıncı bilgisini giriniz.</div>
+                            <span asp-validation-for="Publisher" class="text-danger"></span>
+                        </div>
+
+                        <!-- Sayfa Sayısı -->
+                        <div class="mb-4">
+                            <label for="pageCount" class="form-label fw-bold">
+                                <i class="bi bi-file-text"></i> Sayfa Sayısı
+                            </label>
+                            <input asp-for="PageCount" id="pageCount" type="number"
+                                   class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen sayfa sayısını giriniz.</div>
+                            <span asp-validation-for="PageCount" class="text-danger"></span>
+                        </div>
+
+                        <!-- Dil -->
+                        <div class="mb-4">
+                            <label for="language" class="form-label fw-bold">
+                                <i class="bi bi-translate"></i> Dil
+                            </label>
+                            <input asp-for="Language" id="language" class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen dil bilgisini giriniz.</div>
+                            <span asp-validation-for="Language" class="text-danger"></span>
+                        </div>
+
+                        <!-- Özet -->
+                        <div class="mb-4">
+                            <label for="summary" class="form-label fw-bold">
+                                <i class="bi bi-card-text"></i> Özet
+                            </label>
+                            <textarea asp-for="Summary" id="summary" rows="4"
+                                      class="form-control form-control-lg"></textarea>
+                            <span asp-validation-for="Summary" class="text-danger"></span>
+                        </div>
+
+                        <!-- Mevcut Kopya -->
+                        <div class="mb-4">
+                            <label for="availableCopies" class="form-label fw-bold">
+                                <i class="bi bi-stack"></i> Mevcut Kopya
+                            </label>
+                            <input asp-for="AvailableCopies" id="availableCopies" type="number"
+                                   class="form-control form-control-lg" required />
+                            <div class="invalid-feedback">Lütfen mevcut kopya sayısını giriniz.</div>
+                            <span asp-validation-for="AvailableCopies" class="text-danger"></span>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg me-2">
+                                <i class="bi bi-check-circle"></i> Güncelle
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary btn-lg">
+                                <i class="bi bi-arrow-left-circle"></i> Geri Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Form Validation Script -->
+<script>
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>

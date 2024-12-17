@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+@model Book
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <!-- Form Kartı -->
+            <div class="card shadow-lg border-0">
+                <!-- Kart Başlığı -->
+                <div class="card-header bg-gradient bg-primary text-white text-center py-3 shadow-sm">
+                    <h2 class="mb-0 fw-bold">
+                        <i class="bi bi-book-fill me-2"></i> Yeni Kitap Ekle
+                    </h2>
+                </div>
+
+                
+
+                <!-- Kart Gövdesi -->
+                <div class="card-body p-4">
+                    <form asp-action="Create" method="post" class="needs-validation" novalidate>
+                        <!-- Kitap Adı -->
+                        <div class="mb-4">
+                            <label asp-for="Title" class="form-label fw-bold">
+                                <i class="bi bi-book"></i> Kitap Adı
+                            </label>
+                            <input asp-for="Title" class="form-control form-control-lg" placeholder="Kitap adını giriniz" required />
+                            <div class="invalid-feedback">Lütfen kitap adını giriniz.</div>
+                        </div>
+
+                        <!-- Yazar -->
+                        <div class="mb-4">
+                            <label asp-for="Author" class="form-label fw-bold">
+                                <i class="bi bi-person"></i> Yazar
+                            </label>
+                            <input asp-for="Author" class="form-control form-control-lg" placeholder="Yazar adını giriniz" required />
+                            <div class="invalid-feedback">Lütfen yazar adını giriniz.</div>
+                        </div>
+
+                        <!-- Yayın Yılı -->
+                        <div class="mb-4">
+                            <label asp-for="PublicationYear" class="form-label fw-bold">
+                                <i class="bi bi-calendar"></i> Yayın Yılı
+                            </label>
+                            <input asp-for="PublicationYear" type="number" class="form-control form-control-lg" placeholder="Yayın yılını giriniz" required />
+                            <div class="invalid-feedback">Lütfen yayın yılını giriniz.</div>
+                        </div>
+
+                        <!-- ISBN -->
+                        <div class="mb-4">
+                            <label asp-for="ISBN" class="form-label fw-bold">
+                                <i class="bi bi-barcode"></i> ISBN
+                            </label>
+                            <input asp-for="ISBN" class="form-control form-control-lg" placeholder="ISBN numarasını giriniz" required />
+                            <div class="invalid-feedback">Lütfen ISBN numarasını giriniz.</div>
+                        </div>
+
+                        <!-- Tür -->
+                        <div class="mb-4">
+                            <label asp-for="Genre" class="form-label fw-bold">
+                                <i class="bi bi-tags"></i> Tür
+                            </label>
+                            <input asp-for="Genre" class="form-control form-control-lg" placeholder="Kitap türünü giriniz" required />
+                            <div class="invalid-feedback">Lütfen kitap türünü giriniz.</div>
+                        </div>
+
+                        <!-- Yayıncı -->
+                        <div class="mb-4">
+                            <label asp-for="Publisher" class="form-label fw-bold">
+                                <i class="bi bi-building"></i> Yayıncı
+                            </label>
+                            <input asp-for="Publisher" class="form-control form-control-lg" placeholder="Yayıncı adını giriniz" required />
+                            <div class="invalid-feedback">Lütfen yayıncı adını giriniz.</div>
+                        </div>
+
+                        <!-- Sayfa Sayısı -->
+                        <div class="mb-4">
+                            <label asp-for="PageCount" class="form-label fw-bold">
+                                <i class="bi bi-file-earmark-text"></i> Sayfa Sayısı
+                            </label>
+                            <input asp-for="PageCount" type="number" class="form-control form-control-lg" placeholder="Sayfa sayısını giriniz" required />
+                            <div class="invalid-feedback">Lütfen sayfa sayısını giriniz.</div>
+                        </div>
+
+                        <!-- Dil -->
+                        <div class="mb-4">
+                            <label asp-for="Language" class="form-label fw-bold">
+                                <i class="bi bi-translate"></i> Dil
+                            </label>
+                            <input asp-for="Language" class="form-control form-control-lg" placeholder="Kitap dilini giriniz" required />
+                            <div class="invalid-feedback">Lütfen kitap dilini giriniz.</div>
+                        </div>
+
+                        <!-- Özet -->
+                        <div class="mb-4">
+                            <label asp-for="Summary" class="form-label fw-bold">
+                                <i class="bi bi-card-text"></i> Özet
+                            </label>
+                            <textarea asp-for="Summary" class="form-control form-control-lg" rows="3" placeholder="Kitap özetini giriniz"></textarea>
+                        </div>
+
+                        <!-- Mevcut Kopya Sayısı -->
+                        <div class="mb-4">
+                            <label asp-for="AvailableCopies" class="form-label fw-bold">
+                                <i class="bi bi-layers"></i> Mevcut Kopya Sayısı
+                            </label>
+                            <input asp-for="AvailableCopies" type="number" class="form-control form-control-lg" placeholder="Kopya sayısını giriniz" required />
+                            <div class="invalid-feedback">Lütfen kopya sayısını giriniz.</div>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success btn-lg me-2">
+                                <i class="bi bi-check-circle"></i> Kitap Ekle
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary btn-lg">
+                                <i class="bi bi-arrow-left-circle"></i> Geri Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Form Validation -->
+<script>
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>
+
