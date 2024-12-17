@@ -105,22 +105,62 @@ Bu proje, **Kütüphane Yönetim Sistemi** kapsamında **kullanıcı, rol ve kit
 
 Yetkilendirme, oturum yönetimi ve **kullanıcı dostu arayüzü** ile kullanıma hazır bir sistemdir.
 
-![](images/Home.JPG)
-![](images/Login.JPG)
-![](images/Register.JPG)
-![](images/AdminGiris.JPG)
-![](images/AdminUser.JPG)
-![](images/AdminUserUpdate.JPG)
-![](images/AdminUserCreate.JPG)
-![](images/AdminUserList.JPG)
-![](images/AdminUserAssignRole.JPG)
-![](images/AdminRole.JPG)
-![](images/AdminRoleUpdate.JPG)
-![](images/AdminRoleCreate.JPG)
-![](images/AdminRoleList.JPG)
-![](images/AdminBook.JPG)
-![](images/AdminBookDetails.JPG)
-![](images/AdminBookUpdate.JPG)
-![](images/AdminBookCreate.JPG)
-![](images/AdminBookSearch.JPG)
-![](images/ZiyaretciDenied.JPG)
+**Henüz giriş yapılmamış:**
+![Henüz giriş yapılmamış](images/Home.JPG)
+
+**Giriş:**
+![Giriş](images/Login.JPG)
+
+**Kayıt Ol:**
+![Kayıt Ol](images/Register.JPG)
+
+**Admin giriş yaptığında gelen ekran:**
+Eğer ziyaretçi giriş yapmış olsaydı, **"Admin"** yerine **"Ziyaretçi olarak giriş yapmaktasınız"** yazardı.  
+![Admin Girişi](images/AdminGiris.JPG)
+
+**Tüm kullanıcıları listeleme:**
+![Tüm kullanıcıları listeleme](images/AdminUser.JPG)
+
+**Seçilen kullanıcının bilgilerini güncelleme:**
+![Seçilen kullanıcının bilgilerini güncelleme](images/AdminUserUpdate.JPG)
+
+**Yeni kullanıcı ekleme:**
+![Yeni kullanıcı ekleme](images/AdminUserCreate.JPG)
+
+**Seçilen kullanıcıya atanmış rolleri listeleme:**
+![Seçilen kullanıcıya atanmış rolleri listeleme](images/AdminUserList.JPG)
+
+**Seçilen kullanıcıya rol atama ve silme:**
+![Seçilen kullanıcıya rol atama ve silme](images/AdminUserAssignRole.JPG)
+
+**Tüm rolleri listeleme:**
+![Tüm rolleri listeleme](images/AdminRole.JPG)
+
+**Seçilen rol bilgisini güncelleme:**
+![Seçilen rol bilgisini güncelleme](images/AdminRoleUpdate.JPG)
+
+**Yeni rol ekleme:**
+![Yeni rol ekleme](images/AdminRoleCreate.JPG)
+
+**Kullanıcılar ve sahip oldukları rolleri listeleme:**
+![Kullanıcılar ve sahip oldukları rolleri listeleme](images/AdminRoleList.JPG)
+
+**Tüm kitapları listeleme:**
+![Tüm kitapları listeleme](images/AdminBook.JPG)
+
+**Seçilen kitabın detaylarını görüntüleme:**
+![Seçilen kitabın detaylarını listeleme](images/AdminBookDetails.JPG)
+
+**Seçilen kitabın bilgilerini güncelleme:**
+![Seçilen kitabın bilgilerini güncelleme](images/AdminBookUpdate.JPG)
+
+**Yeni kitap ekleme:**
+![Yeni kitap ekleme](images/AdminBookCreate.JPG)
+
+**Kitap adı, yazar adı ve ISBN'ye göre arama yapma:**
+![Arama motorunda kitap adı, yazar adı ve ISBN'ye göre filtreleyip arama yapma](images/AdminBookSearch.JPG)
+
+**Ziyaretçi rolü atanmış kullanıcıların erişim kısıtlamaları:**
+- **Privacy**, **Users**, **Books** butonlarına bastığında karşılaşacağı sayfa:  
+- Kitap ekleme, silme ve güncelleme yapmaya çalıştığında karşılaşacağı sayfa:  
+![Ziyaretçi Yetki Kısıtlaması](images/ZiyaretciDenied.JPG)
