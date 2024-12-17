@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagementApp.Web.Controllers
 {
-    [Authorize(Roles = "Admin,Ziyaretci")]
     public class BookController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -18,6 +17,7 @@ namespace LibraryManagementApp.Web.Controllers
 
 
         // Kitap Listeleme
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var books = await _unitOfWork.Books.GetAllAsync();
@@ -26,6 +26,7 @@ namespace LibraryManagementApp.Web.Controllers
 
 
         // Kitap Detayları
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var book = await _unitOfWork.Books.GetByIdAsync(id);
@@ -33,8 +34,8 @@ namespace LibraryManagementApp.Web.Controllers
             return View(book);
         }
 
-
         // Kitap Ekleme (GET)
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             return View();
@@ -43,6 +44,8 @@ namespace LibraryManagementApp.Web.Controllers
 
         // Kitap Ekleme (POST)
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Create(Book book)
         {
             if (ModelState.IsValid)
@@ -57,6 +60,7 @@ namespace LibraryManagementApp.Web.Controllers
 
 
         // Kitap Güncelleme (GET)
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id)
         {
             var book = await _unitOfWork.Books.GetByIdAsync(id);
@@ -67,6 +71,8 @@ namespace LibraryManagementApp.Web.Controllers
 
         // Kitap Güncelleme (POST)
         [HttpPost]
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Update(Book book)
         {
             if (ModelState.IsValid)
@@ -81,6 +87,8 @@ namespace LibraryManagementApp.Web.Controllers
 
 
         // Kitap Silme
+        [Authorize(Roles = "Admin")]
+
         public async Task<IActionResult> Delete(int id)
         {
             var book = await _unitOfWork.Books.GetByIdAsync(id);
@@ -94,6 +102,7 @@ namespace LibraryManagementApp.Web.Controllers
 
 
         // Kitap Arama
+        [AllowAnonymous]
         public async Task<IActionResult> Search(string searchText)
         {
             // Eğer arama metni boşsa ara dediğimizde tüm kitapları getirir

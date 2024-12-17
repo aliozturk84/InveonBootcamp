@@ -61,7 +61,7 @@ Bu proje, **Identity** işlemlerinin (**kullanıcı yönetimi**, **rol yönetimi
   - Privacy
   - Users
   - Roles
-- Yetkisiz erişim denemelerinde kullanıcı **Access Denied** sayfasına yönlendirilir.
+- Yetkisiz erişim denemelerinde kullanıcı **Access Denied** sayfasına yönlendirilir.Örneğin bir ziyaretci rolündeki kişinin kitap düzenleme ekleme silme butonlarını kullanması durumunda.
 
 ---
 
