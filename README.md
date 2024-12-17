@@ -116,7 +116,11 @@ Yetkilendirme, oturum yönetimi ve **kullanıcı dostu arayüzü** ile kullanım
 
 **Admin giriş yaptığında gelen ekran:**
 Eğer ziyaretçi giriş yapmış olsaydı, **"Admin"** yerine **"Ziyaretçi olarak giriş yapmaktasınız"** yazardı.  
+
+Ayrıca **Login**, **Register**, **Logout**, **Roles**, **Users** ve **Books** işlemlerinin tüm **CRUD** (Ekleme, Okuma, Güncelleme, Silme) adımlarından sonra ekrana **başarı mesajı** dönüyor ve bir **pop-up** mesajı gösteriliyor.  
+
 ![Admin Girişi](images/AdminGiris.JPG)
+
 
 **Tüm kullanıcıları listeleme:**
 ![Tüm kullanıcıları listeleme](images/AdminUser.JPG)
