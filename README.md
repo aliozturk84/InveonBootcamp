@@ -103,3 +103,23 @@ dotnet run
 Bu proje, **Kütüphane Yönetim Sistemi** kapsamında **kullanıcı, rol ve kitap yönetimi** için gerekli olan tüm işlemleri başarıyla sunmaktadır.
 
 Yetkilendirme, oturum yönetimi ve **kullanıcı dostu arayüzü** ile kullanıma hazır bir sistemdir.
+
+![](images/Home.JPG)
+![](images/Login.JPG)
+![](images/Register.JPG)
+![](images/AdminGiris.JPG)
+![](images/AdminUser.JPG)
+![](images/AdminUserUpdate.JPG)
+![](images/AdminUserCreate.JPG)
+![](images/AdminUserList.JPG)
+![](images/AdminUserAssignRole.JPG)
+![](images/AdminRole.JPG)
+![](images/AdminRoleUpdate.JPG)
+![](images/AdminRoleCreate.JPG)
+![](images/AdminRoleList.JPG)
+![](images/AdminBook.JPG)
+![](images/AdminBookDetails.JPG)
+![](images/AdminBookUpdate.JPG)
+![](images/AdminBookCreate.JPG)
+![](images/AdminBookSearch.JPG)
+![](images/ZiyaretciDenied.JPG)
