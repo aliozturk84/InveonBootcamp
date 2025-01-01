@@ -1,4 +1,7 @@
-﻿namespace InveonBootcamp.API.DTOs.Responses.User
+﻿using InveonBootcamp.Entities.Concrete;
+using Microsoft.AspNetCore.Identity;
+
+namespace InveonBootcamp.Business.DTOs.Responses.User
 {
     public class LoginResponse
     {

@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Abstract
 {
-    public interface IGenericService<T> where T : class, IEntity, new()
+    public interface IGenericService<T, TCreate, TUpdate> where T : class, new()
     {
-        Task InsertAsync(T entity);
-        Task UpdateAsync(T entity);
-        Task DeleteAsync(T entity);
-        Task <List<T>> GetAllAsync(Expression<Func<T, bool>> filter = null);
-        Task<T> GetEntityAsync(Expression<Func<T, bool>> filter);
-        Task<T> GetEntityByIdAsync(int id);
+        Task<ServiceResult> InsertAsync(TCreate entity);
+        Task<ServiceResult> UpdateAsync(TUpdate entity);
+        Task<ServiceResult> DeleteAsync(int id);
+        Task<ServiceResult<List<T>>> GetAllAsync(Expression<Func<T, bool>> filter = null);
+        Task<ServiceResult<T>> GetEntityAsync(Expression<Func<T, bool>> filter);
+        Task<ServiceResult<T>> GetEntityByIdAsync(int id);
     }
 }

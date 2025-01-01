@@ -1,0 +1,8 @@
+2024-12-30 17:45:41.763 +03:00 [INF] [Error] HTTP POST - 500 - Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream: Error Message - Not implemented (in 159.716 ms.)
+2024-12-30 17:48:16.095 +03:00 [INF] [Error] HTTP POST - 500 - Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestPipeReader: Error Message - Not implemented (in 342.9982 ms.)
+2024-12-30 17:49:38.712 +03:00 [INF] [Error] HTTP POST - 500 - Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream: Error Message - Not implemented (in 371.5745 ms.)
+2024-12-30 17:58:36.730 +03:00 [INF] [Error] HTTP POST - 500 - Body:  - Error Message: Not implemented (in 392.6968 ms.)
+2024-12-30 17:59:08.407 +03:00 [INF] [Error] HTTP POST - 500 - Body:  - Error Message: Not implemented (in 471.8843 ms.)
+2024-12-30 18:00:32.378 +03:00 [INF] [Error] HTTP POST - 500: Error Message - Not implemented (in 408.693 ms.)
+2024-12-30 18:00:43.440 +03:00 [INF] [Error] HTTP POST - 500: Error Message - Not implemented (in 97.1856 ms.)
+2024-12-30 18:00:44.836 +03:00 [INF] [Error] HTTP POST - 500: Error Message - Not implemented (in 70.6056 ms.)

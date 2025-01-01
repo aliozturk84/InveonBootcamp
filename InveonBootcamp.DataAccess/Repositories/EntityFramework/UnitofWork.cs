@@ -11,19 +11,19 @@ namespace InveonBootcamp.DataAccess.Repositories.EntityFramework
     public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext _context;
+        public ICourseDal CourseDal { get; }
+        public IOrderDal OrderDal { get; }
+        public IPaymentDal PaymentDal { get; }
 
-        public UnitOfWork(AppDbContext context)
+        public UnitOfWork(AppDbContext context, ICourseDal courseDal, IOrderDal orderDal, IPaymentDal paymentDal)
         {
             _context = context;
-            Courses = new EfCoreCourseDal(context);
-            Orders = new EfCoreOrderDal(context);
-            Payments = new EfCorePaymentDal(context);
+            CourseDal = courseDal;
+            OrderDal = orderDal;
+            PaymentDal = paymentDal;
         }
 
-        public ICourseDal Courses { get; private set; }
-        public IOrderDal Orders { get; private set; }
-        public IPaymentDal Payments { get; private set; }
-
-        public Task<int> SaveChangesAsync() => _context.SaveChangesAsync();
+        public async Task<int> CompleteAsync() => await _context.SaveChangesAsync();
+        public void Dispose() => _context?.Dispose();
     }
 }

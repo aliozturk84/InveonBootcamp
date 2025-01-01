@@ -1,4 +1,4 @@
-﻿namespace InveonBootcamp.API.DTOs.Requests.Course
+﻿namespace InveonBootcamp.Business.DTOs.Requests.Course
 {
     public class CreateCourseRequest
     {

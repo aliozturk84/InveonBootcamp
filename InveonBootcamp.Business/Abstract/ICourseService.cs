@@ -1,4 +1,5 @@
-﻿using InveonBootcamp.Entities.Concrete;
+﻿using InveonBootcamp.Business.DTOs.Requests.Course;
+using InveonBootcamp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Abstract
 {
-    public interface ICourseService : IGenericService<Course>
+    public interface ICourseService : IGenericService<Course, CreateCourseRequest, UpdateCourseRequest>
     {
-        // course a özel şeyleri buraya ekleyebilirsin.
+        Task<ServiceResult<List<Course>>> GetCoursesByCategoryAsync(string category);
+        Task<ServiceResult<List<Course>>> GetCoursesByNameAsync(string courseName);
     }
 }

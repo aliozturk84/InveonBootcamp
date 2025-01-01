@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace InveonBootcamp.DataAccess.Abstract
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork : IDisposable
     {
-        ICourseDal Courses { get; }
-        IOrderDal Orders { get; }
-        IPaymentDal Payments { get; }
-        Task<int> SaveChangesAsync();
+        ICourseDal CourseDal { get; }
+        IOrderDal OrderDal { get; }
+        IPaymentDal PaymentDal { get; }
+        Task<int> CompleteAsync(); 
     }
 }

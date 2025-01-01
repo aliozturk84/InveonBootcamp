@@ -149,21 +149,21 @@ namespace InveonBootcamp.DataAccess.Migrations
                             Id = 1,
                             Amount = 199.99m,
                             OrderId = 1,
-                            PaymentDate = new DateTime(2024, 12, 27, 15, 50, 2, 378, DateTimeKind.Utc).AddTicks(1599)
+                            PaymentDate = new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9139)
                         },
                         new
                         {
                             Id = 2,
                             Amount = 299.99m,
                             OrderId = 2,
-                            PaymentDate = new DateTime(2024, 12, 27, 15, 50, 2, 378, DateTimeKind.Utc).AddTicks(1604)
+                            PaymentDate = new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9141)
                         },
                         new
                         {
                             Id = 3,
                             Amount = 249.99m,
                             OrderId = 3,
-                            PaymentDate = new DateTime(2024, 12, 27, 15, 50, 2, 378, DateTimeKind.Utc).AddTicks(1605)
+                            PaymentDate = new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9142)
                         });
                 });
 

@@ -1,45 +1,172 @@
-﻿using InveonBootcamp.Business.Abstract;
+﻿using AutoMapper;
+using Azure.Core;
+using InveonBootcamp.Business.Abstract;
+using InveonBootcamp.Business.DTOs.Requests.Order;
 using InveonBootcamp.DataAccess.Abstract;
 using InveonBootcamp.Entities.Concrete;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class OrderManager(IOrderDal orderDal) : IOrderService
+    public class OrderManager(IOrderDal orderDal, UserManager<User> userManager, ICourseDal courseDal, IMapper mapper, IUnitOfWork unitOfWork) : IOrderService
     {
-        public async Task DeleteAsync(Order entity)
+        public async Task<ServiceResult> DeleteAsync(int id)
         {
-            await orderDal.DeleteAsync(entity);
+            var order = await unitOfWork.OrderDal.GetEntityByIdAsync(id);
+            if (order == null)
+            {
+                return ServiceResult.Fail("Silinecek sipariş bulunamadı.", HttpStatusCode.NotFound);
+            }
+
+            await unitOfWork.OrderDal.DeleteAsync(order);
+            await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz
+            return ServiceResult.Success("Sipariş başarıyla silindi.", HttpStatusCode.OK);  // Başarı mesajı
         }
 
-        public async Task<List<Order>> GetAllAsync(Expression<Func<Order, bool>> filter = null)
+
+        public async Task<ServiceResult<List<Order>>> GetAllAsync(Expression<Func<Order, bool>> filter = null)
         {
-            return await orderDal.GetAllAsync(filter);
+            var orders = await orderDal.GetAllAsync(filter);
+            if (orders == null || !orders.Any())
+            {
+                return ServiceResult<List<Order>>.Fail(
+                    new List<string> { "Siparişler bulunamadı." },  // Hata mesajı List<string> olarak
+                    "Siparişler veritabanında bulunamadı.",  // Açıklama mesajı
+                    HttpStatusCode.NotFound
+                );
+            }
+
+            return ServiceResult<List<Order>>.Success(orders, "Siparişler başarıyla getirildi.", HttpStatusCode.OK);  // Başarı mesajı
         }
 
-        public async Task<Order> GetEntityAsync(Expression<Func<Order, bool>> filter)
+
+        public async Task<ServiceResult<Order>> GetEntityAsync(Expression<Func<Order, bool>> filter)
         {
-            return await orderDal.GetEntityAsync(filter);
+            var order = await orderDal.GetEntityAsync(filter);
+            if (order == null)
+            {
+                return ServiceResult<Order>.Fail(
+                    new List<string> { "Sipariş bulunamadı." },  // Hata mesajı List<string> olarak
+                    "Sipariş veritabanında bulunamadı.",  // Açıklama mesajı
+                    HttpStatusCode.NotFound
+                );
+            }
+
+            return ServiceResult<Order>.Success(order, "Sipariş başarıyla getirildi.", HttpStatusCode.OK);  // Başarı mesajı
         }
 
-        public async Task<Order> GetEntityByIdAsync(int id)
+
+        public async Task<ServiceResult<Order>> GetEntityByIdAsync(int id)
         {
-            return await orderDal.GetEntityByIdAsync(id);
+            var order = await orderDal.GetEntityByIdAsync(id);
+            if (order == null)
+            {
+                return ServiceResult<Order>.Fail(
+                    new List<string> { $"{id} numaralı sipariş bulunamadı." },  // Hata mesajı List<string> olarak
+                    $"{id} numaralı sipariş veritabanında bulunamadı.",  // Açıklama mesajı
+                    HttpStatusCode.NotFound
+                );
+            }
+
+            return ServiceResult<Order>.Success(order, $"{id} numaralı sipariş başarıyla getirildi.", HttpStatusCode.OK);  // Başarı mesajı
         }
 
-        public async Task InsertAsync(Order entity)
+
+        public async Task<ServiceResult<Order>> GetOrderWithCourseByOrderId(int orderId)
         {
-            await orderDal.InsertAsync(entity);
+            var order = await orderDal.GetOrderWithCourseByOrderId(orderId);
+            if (order == null)
+            {
+                return ServiceResult<Order>.Fail(
+                    new List<string> { $"{orderId} numaralı sipariş ve kurs ilişkisi bulunamadı." },  // Hata mesajı List<string> olarak
+                    $"{orderId} numaralı sipariş ve kurs ilişkisi veritabanında bulunamadı.",  // Açıklama mesajı
+                    HttpStatusCode.NotFound
+                );
+            }
+
+            return ServiceResult<Order>.Success(order, $"{orderId} numaralı sipariş ve kurs ilişkisi başarıyla getirildi.", HttpStatusCode.OK);  // Başarı mesajı
         }
 
-        public async Task UpdateAsync(Order entity)
+
+        public async Task<ServiceResult<List<Order>>> GetOrdersByUserIdAsync(int userId)
         {
-            await orderDal.UpdateAsync(entity);
+            // Kullanıcının tüm siparişlerini alıyoruz
+            var orders = await orderDal.GetAllAsync(o => o.UserId == userId); // UserId'ye göre filtreleme
+
+            if (orders == null || !orders.Any())
+            {
+                return ServiceResult<List<Order>>.Fail(
+                    new List<string> { "Bu kullanıcıya ait sipariş geçmişi bulunamadı." },
+                    "Veritabanında kullanıcının sipariş geçmişi yok.",
+                    HttpStatusCode.NotFound
+                );
+            }
+
+            return ServiceResult<List<Order>>.Success(orders, "Kullanıcının sipariş geçmişi başarıyla getirildi.", HttpStatusCode.OK);
+        }
+
+
+        public async Task<ServiceResult> InsertAsync(CreateOrderRequest request)
+        {
+            // Kullanıcı ve kurs kontrolü
+            var user = await userManager.FindByIdAsync(request.UserId.ToString());
+            if (user == null)
+            {
+                return ServiceResult.Fail("Sipariş oluşturulamadı. Geçersiz kullanıcı ID.", HttpStatusCode.BadRequest);
+            }
+
+            // Kurs kontrolü
+            var courseExists = await unitOfWork.CourseDal.GetEntityByIdAsync(request.CourseId);
+            if (courseExists == null)
+            {
+                return ServiceResult.Fail("Sipariş oluşturulamadı. Geçersiz kurs ID.", HttpStatusCode.BadRequest);
+            }
+
+            // Sipariş oluşturma
+            var newOrder = mapper.Map<Order>(request);
+            await unitOfWork.OrderDal.InsertAsync(newOrder); // Siparişi ekliyoruz
+            await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz
+
+            // Başarılı işlem yanıtı
+            return ServiceResult.Success("Sipariş başarıyla oluşturuldu.", HttpStatusCode.Created);  // Başarı mesajı
+        }
+
+
+        public async Task<ServiceResult> UpdateAsync(UpdateOrderRequest request)
+        {
+            if (request == null)
+            {
+                return ServiceResult.Fail(
+                    "Güncellenecek sipariş verisi geçersiz.",
+                    HttpStatusCode.BadRequest
+                );
+            }
+
+            // Mevcut siparişi veritabanından al
+            var existingOrder = await unitOfWork.OrderDal.GetEntityByIdAsync(request.Id);
+            if (existingOrder == null)
+            {
+                return ServiceResult.Fail(
+                    $"{request.Id} numaralı sipariş bulunamadı.",
+                    HttpStatusCode.NotFound
+                );
+            }
+
+            // Gelen verilerle mevcut siparişi güncelle
+            existingOrder.UserId = request.UserId;
+            existingOrder.CourseId = request.CourseId;
+
+            await unitOfWork.OrderDal.UpdateAsync(existingOrder); // Siparişi güncelliyoruz
+            await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz
+
+            return ServiceResult.Success("Sipariş başarıyla güncellendi.", HttpStatusCode.OK);  // Başarı mesajı
         }
     }
 }

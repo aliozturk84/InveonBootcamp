@@ -16,5 +16,10 @@ namespace InveonBootcamp.Entities.Concrete
         // Foreign Key: Ödemenin ait olduğu sipariş
         public int OrderId { get; set; }
         public Order Order { get; set; }
+
+        public Payment()
+        {
+            PaymentDate = DateTime.Now;
+        }
     }
 }

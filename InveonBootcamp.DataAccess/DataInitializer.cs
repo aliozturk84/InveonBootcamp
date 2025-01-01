@@ -69,5 +69,4 @@ namespace InveonBootcamp.DataAccess
             }
         }
     }
-
 }

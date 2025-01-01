@@ -1,4 +1,4 @@
-﻿namespace InveonBootcamp.API.DTOs.Requests.User
+﻿namespace InveonBootcamp.Business.DTOs.Requests.User
 {
     public class LoginRequest
     {

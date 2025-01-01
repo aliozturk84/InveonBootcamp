@@ -16,6 +16,7 @@ namespace InveonBootcamp.DataAccess.Repositories.EntityFramework
         public DbSet<Course> Courses { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Payment> Payments { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -45,9 +46,6 @@ namespace InveonBootcamp.DataAccess.Repositories.EntityFramework
                 .WithOne(o => o.Payment)
                 .HasForeignKey<Payment>(p => p.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-            
-
         }
     }
 }

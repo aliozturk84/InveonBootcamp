@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace InveonBootcamp.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class SeedDataInput : Migration
+    public partial class SeedDataInputChange : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,9 +38,9 @@ namespace InveonBootcamp.DataAccess.Migrations
                 columns: new[] { "Id", "Amount", "OrderId", "PaymentDate" },
                 values: new object[,]
                 {
-                    { 1, 199.99m, 1, new DateTime(2024, 12, 27, 15, 50, 2, 378, DateTimeKind.Utc).AddTicks(1599) },
-                    { 2, 299.99m, 2, new DateTime(2024, 12, 27, 15, 50, 2, 378, DateTimeKind.Utc).AddTicks(1604) },
-                    { 3, 249.99m, 3, new DateTime(2024, 12, 27, 15, 50, 2, 378, DateTimeKind.Utc).AddTicks(1605) }
+                    { 1, 199.99m, 1, new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9139) },
+                    { 2, 299.99m, 2, new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9141) },
+                    { 3, 249.99m, 3, new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9142) }
                 });
         }
 

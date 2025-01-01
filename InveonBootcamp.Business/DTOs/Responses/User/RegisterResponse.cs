@@ -1,4 +1,4 @@
-﻿namespace InveonBootcamp.API.DTOs.Responses.User
+﻿namespace InveonBootcamp.Business.DTOs.Responses.User
 {
     public class RegisterResponse
     {

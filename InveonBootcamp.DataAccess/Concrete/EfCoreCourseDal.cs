@@ -14,7 +14,6 @@ namespace InveonBootcamp.DataAccess.Concrete
         private readonly AppDbContext _context;
         public EfCoreCourseDal(AppDbContext context) : base(context)
         {
-
             this._context = context;
         }
     }

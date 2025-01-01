@@ -1,4 +1,5 @@
 ﻿using InveonBootcamp.Business.Abstract;
+using InveonBootcamp.Business.DTOs.Requests.Order;
 using InveonBootcamp.Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -7,46 +8,36 @@ using Microsoft.AspNetCore.Mvc;
 namespace InveonBootcamp.API.Controllers
 {
     //[Authorize]
-
     [Route("api/[controller]")]
     [ApiController]
-    public class OrdersController(IOrderService orderService) : ControllerBase
+    public class OrdersController(IOrderService orderService) : CustomControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> GetAll() =>
-            Ok(await orderService.GetAllAsync());
+            CreateActionResult(await orderService.GetAllAsync());
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id) =>
-            Ok(await orderService.GetEntityByIdAsync(id));
+            CreateActionResult(await orderService.GetEntityByIdAsync(id));
 
         [HttpPost]
-        public async Task<IActionResult> Insert([FromBody] Order order)
-        {
-            await orderService.InsertAsync(order);
-            return Ok();
-        }
+        public async Task<IActionResult> Insert([FromBody] CreateOrderRequest order) =>
+            CreateActionResult(await orderService.InsertAsync(order));
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> Update(int id, [FromBody] Order order)
-        {
-            await orderService.UpdateAsync(order);
-            return Ok();
-        }
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateOrderRequest request) =>
+            CreateActionResult(await orderService.UpdateAsync(request));
 
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var order = await orderService.GetEntityByIdAsync(id);
-            await orderService.DeleteAsync(order);
-            return Ok();
-        }
+        public async Task<IActionResult> Delete(int id) =>
+            CreateActionResult(await orderService.DeleteAsync(id));
 
         [HttpGet("filter")]
-        public async Task<IActionResult> GetByFilter([FromQuery] int id)
-        {
-            var course = await orderService.GetEntityAsync(c => c.Id == id);
-            return Ok(course);
-        }
+        public async Task<IActionResult> GetByFilter([FromQuery] int id) =>
+            CreateActionResult(await orderService.GetEntityAsync(c => c.Id == id));
+
+        [HttpGet("GetOrdersByUserId/{userId}")]
+        public async Task<IActionResult> GetOrdersByUserId(int userId) =>
+            CreateActionResult(await orderService.GetOrdersByUserIdAsync(userId));
     }
 }

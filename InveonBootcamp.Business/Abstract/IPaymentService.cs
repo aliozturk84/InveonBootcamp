@@ -1,4 +1,5 @@
-﻿using InveonBootcamp.Entities.Concrete;
+﻿using InveonBootcamp.Business.DTOs.Requests.Payment;
+using InveonBootcamp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Abstract
 {
-    public interface IPaymentService : IGenericService<Payment>
+    public interface IPaymentService : IGenericService<Payment, CreatePaymentRequest, UpdatePaymentRequest>
     {
     }
 }

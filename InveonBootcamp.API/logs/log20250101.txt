@@ -1,0 +1,64 @@
+2025-01-01 19:01:12.091 +03:00 [INF] [Error] HTTP POST - 500: Error Message - Unable to resolve service for type 'InveonBootcamp.Business.Concrete.MyUserManager' while attempting to activate 'InveonBootcamp.API.Controllers.UsersController'. (in 60.5394 ms.)
+2025-01-01 19:02:44.254 +03:00 [INF] [Error] HTTP POST - 500: Error Message - Unable to resolve service for type 'InveonBootcamp.Business.Concrete.MyUserManager' while attempting to activate 'InveonBootcamp.API.Controllers.UsersController'. (in 21.9795 ms.)
+2025-01-01 19:04:30.320 +03:00 [INF] [Error] HTTP POST - 500: Error Message - Unable to resolve service for type 'InveonBootcamp.Business.Concrete.MyUserManager' while attempting to activate 'InveonBootcamp.API.Controllers.UsersController'. (in 18.8766 ms.)
+2025-01-01 19:05:36.635 +03:00 [INF] [Error] HTTP POST - 500: Error Message - Unable to resolve service for type 'InveonBootcamp.Business.Concrete.MyUserManager' while attempting to activate 'InveonBootcamp.API.Controllers.UsersController'. (in 49.6443 ms.)
+2025-01-01 19:08:48.007 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: null
+2025-01-01 19:09:34.765 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: null
+2025-01-01 19:09:50.813 +03:00 [INF] Response Message: Siparişler başarıyla getirildi., ErrorMessage: null
+2025-01-01 19:09:59.820 +03:00 [INF] Response Message: Siparişler başarıyla getirildi., ErrorMessage: null
+2025-01-01 19:21:17.836 +03:00 [INF] Response Message: Kullanıcı başarıyla kaydedildi., ErrorMessage: null
+2025-01-01 19:21:37.339 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: null
+2025-01-01 19:22:35.394 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: null
+2025-01-01 19:23:58.418 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: null
+2025-01-01 19:27:40.713 +03:00 [INF] Response Message: Kullanıcı başarıyla kaydedildi., ErrorMessage: null
+2025-01-01 19:29:11.442 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: null
+2025-01-01 19:29:48.056 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: null
+2025-01-01 19:30:35.618 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: null
+2025-01-01 19:30:42.595 +03:00 [INF] Response Message: Başarıyla çıkış yapıldı., ErrorMessage: null
+2025-01-01 20:11:32.612 +03:00 [INF] Response Message: Kullanıcı başarıyla silindi., ErrorMessage: null
+2025-01-01 20:14:50.349 +03:00 [INF] Response Message: Kullanıcı başarıyla kaydedildi., ErrorMessage: null
+2025-01-01 20:15:23.494 +03:00 [INF] [Error] HTTP DELETE - 500: Error Message - Object reference not set to an instance of an object. (in 60.9891 ms.)
+2025-01-01 20:15:30.917 +03:00 [INF] Response Message: Kullanıcı başarıyla silindi., ErrorMessage: null
+2025-01-01 20:22:20.776 +03:00 [INF] Response Message: No message, ErrorMessage: ["Kullanıcı bulunamadı."]
+2025-01-01 20:42:24.487 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-01 20:46:39.946 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-01 20:47:27.219 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-01 20:50:58.652 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-01 21:02:41.711 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:02:53.330 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:02:56.205 +03:00 [INF] Response Message: Kurslar veritabanında bulunamadı., ErrorMessage: ["Kurslar bulunamadı."]
+2025-01-01 21:02:59.391 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:03:02.536 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:32:10.724 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:32:14.030 +03:00 [INF] Response Message: Kurslar veritabanında bulunamadı., ErrorMessage: ["Kurslar bulunamadı."]
+2025-01-01 21:32:19.831 +03:00 [INF] Response Message: Kurslar veritabanında bulunamadı., ErrorMessage: ["Kurslar bulunamadı."]
+2025-01-01 21:32:22.014 +03:00 [INF] Response Message: Kurslar veritabanında bulunamadı., ErrorMessage: ["Kurslar bulunamadı."]
+2025-01-01 21:32:23.507 +03:00 [INF] Response Message: Kurslar veritabanında bulunamadı., ErrorMessage: ["Kurslar bulunamadı."]
+2025-01-01 21:32:24.850 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:33:26.428 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:34:46.917 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:34:50.234 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:34:59.610 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:42:47.138 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:45:24.943 +03:00 [INF] Response Message: Sipariş başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:45:28.559 +03:00 [INF] Response Message: Sipariş başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:45:30.618 +03:00 [INF] Response Message: Sipariş veritabanında bulunamadı., ErrorMessage: ["Sipariş bulunamadı."]
+2025-01-01 21:45:42.530 +03:00 [INF] Response Message: Sipariş başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 21:46:08.503 +03:00 [INF] Response Message: Ödeme başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 22:19:04.839 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-01 22:24:34.379 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-01 22:25:14.988 +03:00 [INF] Response Message: Kurs başarıyla güncellendi., ErrorMessage: No error message
+2025-01-01 22:25:34.199 +03:00 [INF] Response Message: Kurs başarıyla silindi., ErrorMessage: No error message
+2025-01-01 22:47:52.782 +03:00 [INF] Response Message: No message, ErrorMessage: ["Sipariş oluşturulamadı. Geçersiz kurs ID."]
+2025-01-01 22:48:03.308 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-01 22:48:54.381 +03:00 [INF] Response Message: Sipariş başarıyla güncellendi., ErrorMessage: No error message
+2025-01-01 22:49:13.437 +03:00 [INF] Response Message: Sipariş başarıyla silindi., ErrorMessage: No error message
+2025-01-01 22:53:01.092 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-01 22:53:19.679 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-01 22:53:48.936 +03:00 [INF] Response Message: No message, ErrorMessage: ["3002 numaralı ödeme bulunamadı."]
+2025-01-01 22:53:59.816 +03:00 [INF] Response Message: Ödeme başarıyla güncellendi., ErrorMessage: No error message
+2025-01-01 22:54:09.863 +03:00 [INF] Response Message: No message, ErrorMessage: ["Silinecek ödeme bulunamadı."]
+2025-01-01 22:54:12.425 +03:00 [INF] Response Message: Ödeme başarıyla silindi., ErrorMessage: No error message
+2025-01-01 23:27:58.859 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-01 23:28:11.751 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-01 23:28:20.717 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message

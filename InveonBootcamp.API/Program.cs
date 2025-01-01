@@ -11,7 +11,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using InveonBootcamp.DataAccess;
 using Microsoft.OpenApi.Models;
-
+using InveonBootcamp.API.Middlewares;
+using InveonBootcamp.Business;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,11 +44,14 @@ builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<AppDbContext
 builder.Services.AddScoped<ICourseService, CourseManager>();
 builder.Services.AddScoped<IOrderService, OrderManager>();
 builder.Services.AddScoped<IPaymentService, PaymentManager>();
+builder.Services.AddScoped<IUserService, MyUserManager>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICourseDal, EfCoreCourseDal>();
 builder.Services.AddScoped<IPaymentDal, EfCorePaymentDal>();
 builder.Services.AddScoped<IOrderDal, EfCoreOrderDal>();
+
+builder.Services.AddSingleton<ILoggerService, SerilogLogger>();
 
 builder.Services.AddControllers();
 
@@ -82,6 +86,8 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -105,6 +111,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.UseCustomExceptionMiddleware();
 
 app.MapControllers();
 
