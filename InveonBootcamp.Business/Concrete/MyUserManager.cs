@@ -5,6 +5,7 @@ using InveonBootcamp.Business.DTOs.Requests.User;
 using InveonBootcamp.Business.DTOs.Responses.User;
 using InveonBootcamp.Business.TokenOperations;
 using InveonBootcamp.Entities.Concrete;
+using MassTransit;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +20,7 @@ namespace InveonBootcamp.Business.Concrete
         IMailService mailService,
         IConfiguration configuration,
         IMapper mapper) : IUserService
+
     {
         public async Task<ServiceResult<LoginResponse>> LoginAsync(LoginRequest login)
         {
@@ -86,13 +88,19 @@ namespace InveonBootcamp.Business.Concrete
             }
 
             var emailSubject = "Kayıt Başarılı";
-            var emailBody = "<strong>Hesabınız başarıyla oluşturulmuştur.</strong><br/>" +
-                            "Hesabınızı kullanarak giriş yapabilirsiniz.";
+            var emailBody = "<h2>Merhaba, " + register.UserName + "!</h2>" +
+                "<p><strong>Hesabınız başarıyla oluşturulmuştur.</strong></p>" +
+                //"<p>Hesabınızı kullanarak <a href='https://yourapp.com/login' target='_blank'>giriş yapabilirsiniz</a>.</p>" +
+                "<p>Giriş yaptıktan sonra tüm özelliklerimizi keşfedebilirsiniz!</p>" +
+                "<p>Yardım veya destek almak için bizimle iletişime geçebilirsiniz.</p>" +
+                "<br>" +
+                "<p><strong>Teşekkür ederiz,</strong><br/>" +
+                "Inveon E-Ticaret Ekibi</p>" +
+                "<footer>" +
+                "<p style='font-size: 12px;'>Bu e-posta, yalnızca kayıt işleminiz için gönderilmiştir. Eğer bir hata olduğunu düşünüyorsanız, lütfen bizimle iletişime geçin.</p>" +
+                "</footer>";
 
-            // E-posta gönder
-            await mailService.SendMessageAsync(register.Email, emailSubject, emailBody, isBodyHtml: true);
-
-
+            await mailService.SendMessageAsyncViaMassTransit(new[] { register.Email }, emailSubject, emailBody, isBodyHtml: true);
 
             return ServiceResult<RegisterResponse>.Success(
                 new RegisterResponse { Message = "Kayıt Başarılı" },

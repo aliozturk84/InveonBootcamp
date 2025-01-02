@@ -3,10 +3,11 @@ using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Net;
+using MassTransit;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class MailService(IConfiguration configuration) : IMailService
+    public class MailService(IConfiguration configuration,IPublishEndpoint publishEndpoint) : IMailService
     {
         public async Task SendMessageAsync(string to, string subject, string body, bool isBodyHtml = true)
         {
@@ -23,7 +24,7 @@ namespace InveonBootcamp.Business.Concrete
             }
             mail.Subject = subject;
             mail.Body = body;
-            mail.From = new MailAddress(configuration["Mail:Username"], "NG E-Ticaret", System.Text.Encoding.UTF8);
+            mail.From = new MailAddress(configuration["Mail:Username"], "Inveon Udemy", System.Text.Encoding.UTF8);
 
             SmtpClient smtp = new SmtpClient();
             smtp.Credentials = new NetworkCredential(configuration["Mail:Username"], configuration["Mail:Password"]);
@@ -33,5 +34,16 @@ namespace InveonBootcamp.Business.Concrete
             await smtp.SendMailAsync(mail);
         }
 
+        public async Task SendMessageAsyncViaMassTransit(string[] tos, string subject, string body, bool isBodyHtml = true)
+        {
+            var emailMessage = new EmailMessage
+            {
+                To = tos,
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = isBodyHtml
+            };
+            await publishEndpoint.Publish(emailMessage);
+        }
     }
 }

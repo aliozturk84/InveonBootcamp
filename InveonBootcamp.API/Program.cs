@@ -13,6 +13,7 @@ using InveonBootcamp.DataAccess;
 using Microsoft.OpenApi.Models;
 using InveonBootcamp.API.Middlewares;
 using InveonBootcamp.Business;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -88,6 +89,23 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<EmailConsumer>(); 
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("amqps://reqbuoad:kqw5iwVnCTrlxNYN41IMp7U_UYZAfOXS@kebnekaise.lmq.cloudamqp.com/reqbuoad", h =>
+        {
+            h.Username("reqbuoad");
+            h.Password("kqw5iwVnCTrlxNYN41IMp7U_UYZAfOXS");
+        });
+
+        cfg.ConfigureEndpoints(context);
+    });
+});
+
+
 
 var app = builder.Build();
 
