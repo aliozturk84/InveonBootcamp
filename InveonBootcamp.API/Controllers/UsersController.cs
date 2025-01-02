@@ -1,7 +1,6 @@
 ﻿using Azure.Core;
 using InveonBootcamp.Business.DTOs.Requests.User;
 using InveonBootcamp.Business.DTOs.Responses.User;
-using InveonBootcamp.API.TokenOperations;
 using InveonBootcamp.Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -15,7 +14,7 @@ namespace InveonBootcamp.API.Controllers
     //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController(IUserService userService) : CustomControllerBase
+    public class UsersController(IUserService userService, IMailService mailService) : CustomControllerBase
     {
         [AllowAnonymous]
         [HttpPost("login")]

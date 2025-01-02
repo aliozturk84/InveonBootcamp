@@ -13,7 +13,12 @@ using System.Net;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class MyUserManager(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration configuration, IMapper mapper) : IUserService
+    public class MyUserManager(
+        UserManager<User> userManager,
+        SignInManager<User> signInManager,
+        IMailService mailService,
+        IConfiguration configuration,
+        IMapper mapper) : IUserService
     {
         public async Task<ServiceResult<LoginResponse>> LoginAsync(LoginRequest login)
         {
@@ -79,6 +84,15 @@ namespace InveonBootcamp.Business.Concrete
                     HttpStatusCode.BadRequest
                 );
             }
+
+            var emailSubject = "Kayıt Başarılı";
+            var emailBody = "<strong>Hesabınız başarıyla oluşturulmuştur.</strong><br/>" +
+                            "Hesabınızı kullanarak giriş yapabilirsiniz.";
+
+            // E-posta gönder
+            await mailService.SendMessageAsync(register.Email, emailSubject, emailBody, isBodyHtml: true);
+
+
 
             return ServiceResult<RegisterResponse>.Success(
                 new RegisterResponse { Message = "Kayıt Başarılı" },

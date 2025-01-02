@@ -45,6 +45,7 @@ builder.Services.AddScoped<ICourseService, CourseManager>();
 builder.Services.AddScoped<IOrderService, OrderManager>();
 builder.Services.AddScoped<IPaymentService, PaymentManager>();
 builder.Services.AddScoped<IUserService, MyUserManager>();
+builder.Services.AddScoped<IMailService, MailService>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICourseDal, EfCoreCourseDal>();
