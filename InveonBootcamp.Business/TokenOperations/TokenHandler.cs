@@ -1,9 +1,13 @@
-﻿using InveonBootcamp.Business.TokenOperations.Models;
+﻿using InveonBootcamp.Business.Abstract;
+using InveonBootcamp.Business.Concrete;
+using InveonBootcamp.Business.TokenOperations.Models;
 using InveonBootcamp.Entities.Concrete;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -15,17 +19,26 @@ namespace InveonBootcamp.Business.TokenOperations
     public class TokenHandler
     {
         public readonly IConfiguration _config;
+        private readonly UserManager<User> _userManager;
 
-        public TokenHandler(IConfiguration config)
+
+        public TokenHandler(IConfiguration config, UserManager<User> userManager)
         {
             _config = config;
+            _userManager = userManager;
         }
-        public Token CreateAccessToken(User user)
+        public async Task<Token> CreateAccessToken(User user)
         {
+            var isInstructor = await _userManager.GetRolesAsync(user);
+
             Token token = new Token();
             var claims = new Claim[]
             {
-               new Claim("userEmail",$"{user.Email}")
+               new Claim("userEmail",$"{user.Email}"),
+               new Claim("userId",$"{user.Id}"),
+               new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+               new Claim(ClaimTypes.Role, "Eğitmen")
+
             };
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Token:SecurityKey"]));
             SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

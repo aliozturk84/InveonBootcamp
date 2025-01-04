@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Net;
+using System.Text.Json.Serialization;
 
 namespace InveonBootcamp.API.Middlewares
 {
@@ -30,6 +31,10 @@ namespace InveonBootcamp.API.Middlewares
                 {
                     await _next(context); // Request işleniyor
                     watch.Stop();
+                    var settings = new JsonSerializerSettings
+                    {
+                        PreserveReferencesHandling = PreserveReferencesHandling.Objects
+                    };
 
                     // Burada Response Body'yi okuyoruz ve logluyoruz
                     memoryStream.Seek(0, SeekOrigin.Begin);
@@ -50,7 +55,7 @@ namespace InveonBootcamp.API.Middlewares
                         if (jsonResponse.ContainsKey("errorMessage"))
                         {
                             var errorMessageValue = jsonResponse["errorMessage"];
-                            errorMessage = errorMessageValue != null ? JsonConvert.SerializeObject(errorMessageValue) : "No error message"; // null kontrolü ekledik
+                            errorMessage = errorMessageValue != null ? JsonConvert.SerializeObject(errorMessageValue, settings) : "No error message"; // null kontrolü ekledik
                         }
 
                         // Mesajları logluyoruz
@@ -71,6 +76,11 @@ namespace InveonBootcamp.API.Middlewares
 
         private Task HandleException(HttpContext context, Exception ex, Stopwatch watch)
         {
+            var settings = new JsonSerializerSettings
+            {
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects
+            };
+
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
@@ -79,7 +89,7 @@ namespace InveonBootcamp.API.Middlewares
             string message = "[Error] HTTP " + context.Request.Method + " - " + context.Response.StatusCode + ": Error Message - " + ex.Message + " (in " + watch.Elapsed.TotalMilliseconds + " ms.)";
             _loggerService.Write(message);
 
-            var result = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);
+            var result = JsonConvert.SerializeObject(new { error = ex.Message }, settings);
             return context.Response.WriteAsync(result);
         }
     }

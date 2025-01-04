@@ -17,11 +17,21 @@ using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
 var tokenOptions = builder.Configuration.GetSection("Token");
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+        
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuer = true,
@@ -39,8 +49,21 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
 });
+builder.Services.AddHttpContextAccessor();
 
-builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<AppDbContext>();
+//builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddIdentityCore<User>(opt =>
+{
+    opt.Password.RequireDigit = false;
+    opt.Password.RequireLowercase = false;
+    opt.Password.RequireUppercase = false;
+    opt.Password.RequireNonAlphanumeric = false;
+    opt.User.RequireUniqueEmail = true;
+})
+        .AddRoles<Role>()
+        .AddSignInManager<SignInManager<User>>()
+        .AddEntityFrameworkStores<AppDbContext>();
 
 builder.Services.AddScoped<ICourseService, CourseManager>();
 builder.Services.AddScoped<IOrderService, OrderManager>();
@@ -124,6 +147,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseRouting();
+
+app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
 

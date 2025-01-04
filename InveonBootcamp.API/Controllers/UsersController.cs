@@ -11,7 +11,7 @@ using InveonBootcamp.Business.Abstract;
 
 namespace InveonBootcamp.API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsersController(IUserService userService, IMailService mailService) : CustomControllerBase
@@ -30,6 +30,7 @@ namespace InveonBootcamp.API.Controllers
         public async Task<IActionResult> Update(UpdateUserRequest request) =>
             CreateActionResult(await userService.UpdateUserAsync(request));
 
+        [AllowAnonymous]
         [HttpGet("{userId:int}")]
         public async Task<IActionResult> GetUserById(int userId) =>
             CreateActionResult(await userService.GetUserByIdAsync(userId));
@@ -41,5 +42,31 @@ namespace InveonBootcamp.API.Controllers
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id) =>
         CreateActionResult(await userService.DeleteUserAsync(id));
+
+        [Authorize]
+        [HttpPut("UpdateProfile")]
+        public async Task<IActionResult> UpdateProfile([FromBody] UpdateCurrentUserRequest request)
+        {
+            // Kullanıcı profilini güncelle
+            var result = await userService.UpdateCurrentUserAsync(request, User);
+
+            // Başarılı sonuç dönerse 200 OK
+            if (result.IsSuccess)
+            {
+                return Ok(new
+                {
+                    result.Message
+                    
+                });
+            }
+
+            // Başarısız sonuç dönerse hata mesajlarını ve HTTP durum kodunu gönder
+            return StatusCode((int)result.Status, new
+            {
+                result.Message,
+                Errors = result.ErrorMessage
+            });
+        }
+
     }
 }

@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InveonBootcamp.API.Controllers
 {
-    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CoursesController(ICourseService courseService) : CustomControllerBase
@@ -20,14 +19,17 @@ namespace InveonBootcamp.API.Controllers
         public async Task<IActionResult> GetById(int id) =>
             CreateActionResult(await courseService.GetEntityByIdAsync(id));
 
+        [Authorize(Roles = "Eğitmen")]
         [HttpPost]
         public async Task<IActionResult> Insert([FromBody] CreateCourseRequest course) =>
             CreateActionResult(await courseService.InsertAsync(course));
-        
+
+        [Authorize(Roles = "Eğitmen")]
         [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateCourseRequest request) =>
             CreateActionResult(await courseService.UpdateAsync(request));
 
+        [Authorize(Roles = "Eğitmen")]
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id) =>
             CreateActionResult(await courseService.DeleteAsync(id));

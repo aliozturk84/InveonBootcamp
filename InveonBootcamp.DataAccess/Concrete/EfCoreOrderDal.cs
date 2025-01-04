@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,10 +22,17 @@ namespace InveonBootcamp.DataAccess.Concrete
         public Task<Order> GetOrderWithCourseByOrderId(int orderId)
         {
             var a = _context.Orders
-                       .Include(order => order.Course) // İlgili Course tablosunu dahil ediyoruz
+                       .Include(order => order.Course)
                        .FirstOrDefaultAsync(order => order.Id == orderId);
             return a;
 
+        }
+
+        public async Task<List<Order>> GetAllAsync(Expression<Func<Order, bool>> filter = null)
+        {
+            return filter == null
+                ? await _context.Orders.ToListAsync()
+                : await _context.Orders.Include(x=>x.Course).Where(filter).ToListAsync();
         }
     }
 }

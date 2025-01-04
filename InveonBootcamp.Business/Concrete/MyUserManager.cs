@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Net;
+using System.Security.Claims;
 
 
 namespace InveonBootcamp.Business.Concrete
@@ -34,9 +35,9 @@ namespace InveonBootcamp.Business.Concrete
                 );
             }
 
-            var result = await signInManager.PasswordSignInAsync(user, login.Password, isPersistent: false, lockoutOnFailure: false);
+            var result = await userManager.CheckPasswordAsync(user, login.Password);
 
-            if (!result.Succeeded)
+            if (!result)
             {
                 return ServiceResult<LoginResponse>.Fail(
                     new List<string> { "Şifre hatalı." },
@@ -45,8 +46,8 @@ namespace InveonBootcamp.Business.Concrete
                 );
             }
 
-            TokenHandler tokenHandler = new(configuration);
-            var token = tokenHandler.CreateAccessToken(user);
+            TokenHandler tokenHandler = new(configuration,userManager);
+            var token = await tokenHandler.CreateAccessToken(user);
             user.RefreshToken = token.RefreshToken;
             user.RefreshTokenExpireDate = token.ExpirationDate;
             await userManager.UpdateAsync(user);
@@ -72,8 +73,8 @@ namespace InveonBootcamp.Business.Concrete
 
             var user = new User { Email = register.Email, UserName = register.UserName };
 
-            TokenHandler tokenHandler = new(configuration);
-            var token = tokenHandler.CreateAccessToken(user);
+            TokenHandler tokenHandler = new(configuration, userManager);
+            var token = await tokenHandler.CreateAccessToken(user);
             user.RefreshToken = token.RefreshToken;
             user.RefreshTokenExpireDate = token.ExpirationDate;
 
@@ -159,6 +160,8 @@ namespace InveonBootcamp.Business.Concrete
             var user = await userManager.FindByIdAsync(userId.ToString());
 
             var newUser = mapper.Map<GetUserByIdResponse>(user);
+            newUser.Roles = await userManager.GetRolesAsync(user);
+
             if (user == null)
             {
                 return ServiceResult<GetUserByIdResponse>.Fail(new List<string> { "Kullanıcı bulunamadı." }, "Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
@@ -186,22 +189,60 @@ namespace InveonBootcamp.Business.Concrete
             return ServiceResult.Success("Kullanıcı başarıyla silindi.", HttpStatusCode.OK);
         }
 
+        public async Task<ServiceResult> UpdateCurrentUserAsync(UpdateCurrentUserRequest request, ClaimsPrincipal currentUser)
+        {
+            if (request == null)
+            {
+                return ServiceResult.Fail("Güncelleme isteği eksik.", HttpStatusCode.BadRequest);
+            }
 
-        //public async Task<ServiceResult> ForgotPasswordAsync(string email)
-        //{
-        //    var user = await userManager.FindByEmailAsync(email);
-        //    if (user == null)
-        //    {
-        //        return ServiceResult.Fail("Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
-        //    }
+            // Kullanıcı kimliğini JWT'den al
+            var userId = currentUser.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return ServiceResult.Fail("Kullanıcı kimliği doğrulanamadı.", HttpStatusCode.Unauthorized);
+            }
 
-        //    var token = await userManager.GeneratePasswordResetTokenAsync(user);
-        //    var resetLink = $"https://example.com/reset-password?token={token}"; // Burada şifre sıfırlama linkini oluşturuyorsunuz.
+            // Kullanıcıyı UserManager ile bul
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return ServiceResult.Fail("Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
+            }
 
-        //    // E-posta gönderme işlemi yapılacak burada
-        //    // Örneğin, bir e-posta gönderici servisi kullanarak `resetLink` gönderilebilir
+            // Kullanıcı bilgilerini güncelle
+            user.UserName = request.UserName ?? user.UserName;
+            user.Email = request.Email ?? user.Email;
+            
 
-        //    return ServiceResult.Success("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.", HttpStatusCode.OK);
-        //}
+            var result = await userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                var errors = result.Errors.Select(e => e.Description).ToList();
+                return ServiceResult.Fail("Kullanıcı güncellenirken bir hata oluştu.", HttpStatusCode.BadRequest);
+            }
+
+            return ServiceResult.Success("Kullanıcı başarıyla güncellendi.", HttpStatusCode.OK);
+        }
+
+
+
+
+        public async Task<ServiceResult> ForgotPasswordAsync(string email)
+        {
+            var user = await userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                return ServiceResult.Fail("Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
+            }
+
+            var token = await userManager.GeneratePasswordResetTokenAsync(user);
+            var resetLink = $"https://example.com/reset-password?token={token}"; // Burada şifre sıfırlama linkini oluşturuyorsunuz.
+
+            // E-posta gönderme işlemi yapılacak burada
+            // Örneğin, bir e-posta gönderici servisi kullanarak `resetLink` gönderilebilir
+
+            return ServiceResult.Success("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.", HttpStatusCode.OK);
+        }
     }
 }

@@ -5,6 +5,7 @@ using InveonBootcamp.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,6 +18,8 @@ namespace InveonBootcamp.Business.Abstract
         Task<ServiceResult> UpdateUserAsync(UpdateUserRequest user);
         Task<ServiceResult> LogoutAsync(int userId);
         Task<ServiceResult> DeleteUserAsync(int userId);
-        Task<ServiceResult<GetUserByIdResponse>> GetUserByIdAsync(int userId);  
+        Task<ServiceResult<GetUserByIdResponse>> GetUserByIdAsync(int userId);
+        Task<ServiceResult> UpdateCurrentUserAsync(UpdateCurrentUserRequest request, ClaimsPrincipal currentUser);
+
     }
 }

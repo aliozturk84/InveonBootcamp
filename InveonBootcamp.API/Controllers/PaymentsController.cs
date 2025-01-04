@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace InveonBootcamp.API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PaymentsController(IPaymentService paymentService) : CustomControllerBase

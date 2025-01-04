@@ -1,0 +1,32 @@
+2025-01-05 00:27:43.504 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 00:27:43.706 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:27:43.731 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:27:43.803 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 00:28:14.095 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:28:14.105 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:28:14.132 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 00:28:14.161 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 00:28:14.172 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 00:28:17.355 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:28:17.364 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:34:47.510 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 00:35:20.190 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:35:34.067 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:35:40.167 +03:00 [INF] Response Message: Kurslar veritabanında bulunamadı., ErrorMessage: ["Kurslar bulunamadı."]
+2025-01-05 00:37:29.701 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 00:37:29.783 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:37:29.833 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 00:37:29.845 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 00:58:51.194 +03:00 [INF] [Error] HTTP GET - 500: Error Message - Invalid column name 'InstructorId'. (in 690.7357 ms.)
+2025-01-05 00:59:06.912 +03:00 [INF] [Error] HTTP GET - 500: Error Message - Invalid column name 'InstructorId'. (in 157.7648 ms.)
+2025-01-05 00:59:51.951 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 01:01:01.485 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 01:16:06.578 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 01:17:09.392 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 01:17:20.056 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 01:17:59.473 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 01:18:04.847 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 01:20:14.650 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 01:20:39.822 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 01:21:35.518 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 01:21:44.235 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message

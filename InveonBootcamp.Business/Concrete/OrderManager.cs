@@ -4,18 +4,20 @@ using InveonBootcamp.Business.Abstract;
 using InveonBootcamp.Business.DTOs.Requests.Order;
 using InveonBootcamp.DataAccess.Abstract;
 using InveonBootcamp.Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class OrderManager(IOrderDal orderDal, UserManager<User> userManager, ICourseDal courseDal, IMapper mapper, IUnitOfWork unitOfWork) : IOrderService
+    public class OrderManager(IOrderDal orderDal, UserManager<User> userManager, ICourseDal courseDal, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : IOrderService
     {
         public async Task<ServiceResult> DeleteAsync(int id)
         {
@@ -116,11 +118,13 @@ namespace InveonBootcamp.Business.Concrete
         public async Task<ServiceResult> InsertAsync(CreateOrderRequest request)
         {
             // Kullanıcı ve kurs kontrolü
-            var user = await userManager.FindByIdAsync(request.UserId.ToString());
-            if (user == null)
+            //var user = await userManager.FindByIdAsync(request.UserId.ToString());
+            var userId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
             {
                 return ServiceResult.Fail("Sipariş oluşturulamadı. Geçersiz kullanıcı ID.", HttpStatusCode.BadRequest);
             }
+            request.UserId = Convert.ToInt32(userId);
 
             // Kurs kontrolü
             var courseExists = await unitOfWork.CourseDal.GetEntityByIdAsync(request.CourseId);

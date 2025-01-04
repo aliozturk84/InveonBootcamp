@@ -46,6 +46,13 @@ namespace InveonBootcamp.DataAccess.Repositories.EntityFramework
                 .WithOne(o => o.Payment)
                 .HasForeignKey<Payment>(p => p.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            //builder.Entity<Course>()
+            //    .HasOne(u=>u.Instructor)
+            //    .WithMany(c=>c.Courses)
+            //    .HasForeignKey(u=>u.InstructorId)
+            //    .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }
