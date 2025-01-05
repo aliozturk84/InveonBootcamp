@@ -1,5 +1,6 @@
 ﻿using InveonBootcamp.Business.DTOs.Requests.Payment;
 using InveonBootcamp.Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,6 @@ namespace InveonBootcamp.Business.Abstract
 {
     public interface IPaymentService : IGenericService<Payment, CreatePaymentRequest, UpdatePaymentRequest>
     {
+        Task<ServiceResult> PayCallBack(IFormCollection requestBody);
     }
 }

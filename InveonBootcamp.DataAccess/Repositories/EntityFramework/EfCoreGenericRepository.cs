@@ -21,11 +21,12 @@ namespace InveonBootcamp.DataAccess.Repositories.EntityFramework
             _dbSet = _context.Set<T>();
         }
 
-        public async Task InsertAsync(T entity)
+        public async Task<T> InsertAsync(T entity)
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
            var result =  await _dbSet.AddAsync(entity);
            var result2 = await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task UpdateAsync(T entity)

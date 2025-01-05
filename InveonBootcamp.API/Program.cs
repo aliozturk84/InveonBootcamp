@@ -78,6 +78,8 @@ builder.Services.AddScoped<ICourseDal, EfCoreCourseDal>();
 builder.Services.AddScoped<IPaymentDal, EfCorePaymentDal>();
 builder.Services.AddScoped<IOrderDal, EfCoreOrderDal>();
 
+builder.Services.AddScoped<IyzigoManager>();
+
 builder.Services.AddSingleton<ILoggerService, SerilogLogger>();
 
 builder.Services.AddControllers();

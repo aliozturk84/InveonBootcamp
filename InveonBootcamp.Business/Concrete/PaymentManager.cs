@@ -3,6 +3,7 @@ using InveonBootcamp.Business.Abstract;
 using InveonBootcamp.Business.DTOs.Requests.Payment;
 using InveonBootcamp.DataAccess.Abstract;
 using InveonBootcamp.Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class PaymentManager(IPaymentDal paymentDal, IMapper mapper, IUnitOfWork unitOfWork) : IPaymentService
+    public class PaymentManager(IPaymentDal paymentDal, IMapper mapper, IUnitOfWork unitOfWork, IyzigoManager iyzigoManager) : IPaymentService
     {
         public async Task<ServiceResult> DeleteAsync(int id)
         {
@@ -94,11 +95,24 @@ namespace InveonBootcamp.Business.Concrete
             var newPayment = mapper.Map<Payment>(request);
             newPayment.Amount = order.Course.Price;
 
+            // Iyzico eklenecek başarılı ise payment kaydedilecek
+            var result = await iyzigoManager.PayAsync();
+
             await unitOfWork.PaymentDal.InsertAsync(newPayment); // Ödemeyi ekliyoruz
             await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz
 
-            return ServiceResult.Success("Ödeme başarıyla oluşturuldu.", HttpStatusCode.Created);  // Başarı mesajı
+            return ServiceResult.Success("Ödeme başarıyla oluşturuldu.", result, HttpStatusCode.Created);  // Başarı mesajı
         }
+        public async Task<ServiceResult> PayCallBack(IFormCollection requestBody)
+        { 
+            var result = await iyzigoManager.ProcessPaymentCallbackAsync(requestBody);
+            if (result == "Başarılı")
+            {
+                return ServiceResult.Success("Ödeme başarıyla oluşturuldu.", result, HttpStatusCode.Created);  // Başarı mesajı
+
+            }
+            return ServiceResult.Fail(result, HttpStatusCode.BadRequest);
+        } 
 
 
         public async Task<ServiceResult> UpdateAsync(UpdatePaymentRequest request)
@@ -131,5 +145,7 @@ namespace InveonBootcamp.Business.Concrete
 
             return ServiceResult.Success("Ödeme başarıyla güncellendi.", HttpStatusCode.OK);  // Başarı mesajı
         }
+
     }
 }
+

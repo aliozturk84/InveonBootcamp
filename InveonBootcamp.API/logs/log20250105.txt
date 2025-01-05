@@ -519,3 +519,309 @@
 2025-01-05 14:56:33.258 +03:00 [INF] Response Message: No message, ErrorMessage: No error message
 2025-01-05 14:57:33.993 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
 2025-01-05 14:58:35.437 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:29:54.369 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:29:54.444 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:29:58.053 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 18:29:58.150 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:29:58.162 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:29:58.210 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 18:30:00.362 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:30:00.374 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:36:25.790 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 18:36:49.392 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:42:28.662 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 18:42:56.239 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:44:16.097 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:50:07.495 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:50:27.501 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:52:39.120 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:52:47.392 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:53:45.147 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:56:32.705 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:56:33.219 +03:00 [INF] [Error] HTTP POST - 500: Error Message - An error occurred while saving the entity changes. See the inner exception for details. (in 477.4049 ms.)
+2025-01-05 18:57:40.149 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:57:40.158 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:57:56.917 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:57:56.928 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:58:18.161 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:58:18.171 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:58:18.254 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 18:58:18.276 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 18:58:18.300 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 18:58:34.420 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 18:58:34.472 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 18:58:34.494 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:58:34.515 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:58:36.272 +03:00 [INF] Response Message: 3 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:58:36.289 +03:00 [INF] Response Message: 3 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 18:59:20.153 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 18:59:20.178 +03:00 [INF] Response Message: No message, ErrorMessage: No error message
+2025-01-05 19:01:23.941 +03:00 [INF] Response Message: 3 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:01:23.950 +03:00 [INF] Response Message: 3 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:01:57.107 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:02:00.103 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:02:00.412 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:02:00.419 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:04:31.003 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:04:31.013 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:13.955 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:13.962 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:31.939 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:31.947 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:37.471 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:37.532 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:38.417 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:38.430 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:50.944 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:05:51.623 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:05:51.676 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:05:51.687 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:09:48.352 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:09:48.370 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:33:23.243 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:33:25.460 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 19:33:25.565 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:33:25.610 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:33:25.625 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:33:28.753 +03:00 [INF] Response Message: 3 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:33:28.766 +03:00 [INF] Response Message: 3 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:33:42.487 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:33:43.628 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:33:52.183 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:33:52.902 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:35:14.854 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 19:35:14.926 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:35:14.978 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:35:15.047 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:35:17.069 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:35:17.078 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:35:31.779 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:35:32.402 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:35:39.211 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:35:40.007 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:37:27.243 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 19:37:27.311 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:37:27.376 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:37:27.444 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:37:29.367 +03:00 [INF] Response Message: 2 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:37:29.389 +03:00 [INF] Response Message: 2 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:37:46.461 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:37:48.025 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:38:38.611 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:38:39.810 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:39:12.240 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:39:13.411 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:40:46.348 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:40:47.114 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:42:36.490 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:42:36.715 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:43:15.134 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:43:15.260 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:43:39.463 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:43:39.589 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:43:44.445 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:43:44.457 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:43:44.485 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:43:44.493 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:43:44.509 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:44:18.805 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:44:18.934 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:45:45.810 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:45:46.048 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:46:25.858 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:46:25.990 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:47:22.984 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 19:47:23.069 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:47:23.090 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:47:23.107 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:47:25.045 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:47:25.057 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:47:37.796 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:47:38.027 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:50:24.026 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:50:24.266 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:53:58.626 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:53:58.853 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:57:21.584 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:57:54.269 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 19:57:54.434 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 19:57:54.440 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:57:54.451 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:58:00.307 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:58:00.318 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 19:59:31.543 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:59:32.031 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:59:45.437 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 19:59:45.559 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:00:17.312 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:00:17.437 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:00:20.596 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:00:20.610 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:00:21.241 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:00:21.255 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:00:22.135 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:00:22.151 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:00:58.679 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:00:58.803 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:03:18.341 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:03:18.767 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:03:23.413 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:04:17.886 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:04:17.915 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:04:18.798 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:04:18.820 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:04:19.681 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:04:19.689 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:04:31.616 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:04:31.754 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:04:34.416 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:11:56.635 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:11:56.887 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:11:59.942 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:12:18.683 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 20:12:18.732 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:12:18.746 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:12:18.769 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:12:20.686 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:12:20.697 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:12:36.275 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:12:36.413 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:12:46.298 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:21:48.028 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:21:48.260 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:21:52.125 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:27:29.846 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:27:29.864 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:28:11.955 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:28:11.973 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:28:29.451 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:28:29.463 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:28:29.587 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:28:29.628 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:28:29.641 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:28:33.397 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:28:33.411 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:29:26.597 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:29:26.619 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:29:26.641 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:29:29.098 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 20:29:29.159 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:29:29.176 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:29:29.237 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:29:31.348 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:29:31.359 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:29:43.831 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:29:44.062 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:29:47.076 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 20:38:51.213 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 20:38:51.263 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:38:51.280 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:38:51.285 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:39:43.330 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 20:39:43.387 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:39:43.393 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:39:43.404 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:40:42.073 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 20:40:42.154 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:40:42.158 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:40:42.174 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:57:51.850 +03:00 [INF] Response Message: Yeni şifre e-posta adresinize gönderildi., ErrorMessage: No error message
+2025-01-05 20:58:35.236 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 20:58:35.311 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:58:35.395 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 20:58:35.410 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 20:59:59.233 +03:00 [INF] Response Message: Yeni şifre e-posta adresinize gönderildi., ErrorMessage: No error message
+2025-01-05 21:02:54.385 +03:00 [INF] Response Message: Kullanıcı başarıyla kaydedildi., ErrorMessage: No error message
+2025-01-05 21:03:21.310 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 21:03:21.351 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:21.366 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:21.369 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 21:03:28.734 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:28.756 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:30.072 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:30.091 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:31.226 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:31.242 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:32.494 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:32.508 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:35.416 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:35.429 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:42.490 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:43.569 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:03:47.431 +03:00 [INF] Response Message: Veritabanında kullanıcının sipariş geçmişi yok., ErrorMessage: ["Bu kullanıcıya ait sipariş geçmişi bulunamadı."]
+2025-01-05 21:03:47.442 +03:00 [INF] Response Message: Veritabanında kullanıcının sipariş geçmişi yok., ErrorMessage: ["Bu kullanıcıya ait sipariş geçmişi bulunamadı."]
+2025-01-05 21:04:30.269 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:04:38.931 +03:00 [INF] Response Message: Veritabanında kullanıcının sipariş geçmişi yok., ErrorMessage: ["Bu kullanıcıya ait sipariş geçmişi bulunamadı."]
+2025-01-05 21:04:38.938 +03:00 [INF] Response Message: Veritabanında kullanıcının sipariş geçmişi yok., ErrorMessage: ["Bu kullanıcıya ait sipariş geçmişi bulunamadı."]
+2025-01-05 21:04:40.428 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:04:40.440 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:04:47.474 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:04:47.483 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:04:58.391 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:04:58.636 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:05:01.434 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:05:05.975 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:06.001 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:08.395 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:08.406 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:10.118 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:10.142 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:12.422 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:12.433 +03:00 [INF] Response Message: 1 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:13.828 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:13.842 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:14.696 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:14.705 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:05:35.446 +03:00 [INF] Response Message: Yeni şifre e-posta adresinize gönderildi., ErrorMessage: No error message
+2025-01-05 21:06:13.848 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 21:06:13.901 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:06:13.921 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:06:13.926 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 21:06:16.726 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:06:16.738 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:06:26.269 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:06:28.516 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:06:28.527 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:06:39.951 +03:00 [INF] Response Message: Girdiğiniz şifre geçersiz., ErrorMessage: ["Şifre hatalı."]
+2025-01-05 21:06:44.863 +03:00 [INF] Response Message: Girdiğiniz şifre geçersiz., ErrorMessage: ["Şifre hatalı."]
+2025-01-05 21:06:57.809 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 21:06:57.847 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:06:57.852 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 21:06:57.867 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:07:01.427 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:07:01.435 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:07:32.518 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:08:17.936 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:16:28.090 +03:00 [INF] Response Message: Kullanıcı başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:17:04.248 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 21:17:04.418 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 21:17:04.427 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:17:04.444 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:17:27.132 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:17:27.141 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:17:28.617 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:17:28.635 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:22:59.090 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 21:23:13.014 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:23:40.177 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:24:16.795 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:24:26.165 +03:00 [INF] Response Message: 3 numaralı kurs başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:25:00.446 +03:00 [INF] Response Message: Kurs başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:25:16.995 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:25:24.218 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:25:35.360 +03:00 [INF] Response Message: Kurs başarıyla silindi., ErrorMessage: No error message
+2025-01-05 21:25:52.288 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:26:01.408 +03:00 [INF] Response Message: Siparişler başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:26:30.594 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:27:21.978 +03:00 [INF] Response Message: 5049 numaralı sipariş başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:28:20.290 +03:00 [INF] Response Message: Sipariş başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:28:48.524 +03:00 [INF] Response Message: Sipariş başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:28:54.225 +03:00 [INF] Response Message: Kullanıcının sipariş geçmişi başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:29:09.020 +03:00 [INF] Response Message: Sipariş başarıyla silindi., ErrorMessage: No error message
+2025-01-05 21:29:16.616 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:29:29.372 +03:00 [INF] Response Message: Ödemeler başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:29:41.283 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 21:30:04.165 +03:00 [INF] Response Message: 4040 numaralı ödeme başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:30:20.270 +03:00 [INF] Response Message: Ödeme başarıyla güncellendi., ErrorMessage: No error message
+2025-01-05 21:30:37.699 +03:00 [INF] Response Message: Ödeme başarıyla getirildi., ErrorMessage: No error message
+2025-01-05 21:31:11.714 +03:00 [INF] Response Message: Ödeme başarıyla silindi., ErrorMessage: No error message

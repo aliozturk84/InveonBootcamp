@@ -211,6 +211,11 @@ namespace InveonBootcamp.Business.Concrete
                 return ServiceResult.Fail("Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
             }
 
+            if(request.Password!=string.Empty && request.NewPassword!=string.Empty && await userManager.CheckPasswordAsync(user, request.Password))
+            {
+                await userManager.ChangePasswordAsync(user, request.Password, request.NewPassword);
+            }
+
             // Kullanıcı bilgilerini güncelle
             user.UserName = request.UserName ?? user.UserName;
             user.Email = request.Email ?? user.Email;
@@ -276,22 +281,6 @@ namespace InveonBootcamp.Business.Concrete
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-
-        //public async Task<ServiceResult> ForgotPasswordAsync(string email)
-        //{
-        //    var user = await userManager.FindByEmailAsync(email);
-        //    if (user == null)
-        //    {
-        //        return ServiceResult.Fail("Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
-        //    }
-
-        //    var token = await userManager.GeneratePasswordResetTokenAsync(user);
-        //    var resetLink = $"https://example.com/reset-password?token={token}"; // Burada şifre sıfırlama linkini oluşturuyorsunuz.
-
-        //    // E-posta gönderme işlemi yapılacak burada
-        //    // Örneğin, bir e-posta gönderici servisi kullanarak `resetLink` gönderilebilir
-
-        //    return ServiceResult.Success("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.", HttpStatusCode.OK);
-        //}
+        
     }
 }

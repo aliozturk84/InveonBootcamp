@@ -35,5 +35,11 @@ namespace InveonBootcamp.API.Controllers
         [HttpGet("filter")]
         public async Task<IActionResult> GetByFilter([FromQuery] int id) =>
             CreateActionResult(await paymentService.GetEntityAsync(c => c.Id == id));
+
+        [AllowAnonymous]
+        [HttpPost("PayCallBack")]
+        public async Task<IActionResult> PayCallBack([FromForm] IFormCollection requestBody) =>
+            CreateActionResult(await paymentService.PayCallBack(requestBody));
+
     }
 }

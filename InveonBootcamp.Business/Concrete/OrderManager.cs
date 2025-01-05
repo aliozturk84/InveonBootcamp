@@ -142,7 +142,7 @@ namespace InveonBootcamp.Business.Concrete
 
             // Sipariş oluşturma
             var newOrder = mapper.Map<Order>(request);
-            await unitOfWork.OrderDal.InsertAsync(newOrder); // Siparişi ekliyoruz
+            var res=await unitOfWork.OrderDal.InsertAsync(newOrder); // Siparişi ekliyoruz
             await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz
 
             var user = await userManager.FindByIdAsync(userId);
@@ -162,7 +162,7 @@ namespace InveonBootcamp.Business.Concrete
             await mailService.SendMessageAsyncViaMassTransit(new[] { user.Email }, emailSubject, emailBody, isBodyHtml: true);
 
             // Başarılı işlem yanıtı
-            return ServiceResult.Success("Sipariş başarıyla oluşturuldu.", HttpStatusCode.Created);  // Başarı mesajı
+            return ServiceResult.Success("Sipariş başarıyla oluşturuldu.", res.Id, HttpStatusCode.Created);  // Başarı mesajı
         }
 
 

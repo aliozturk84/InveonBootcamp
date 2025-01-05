@@ -68,6 +68,8 @@ namespace InveonBootcamp.Business
     {
         public List<string>? ErrorMessage { get; set; }
         public string? Message { get; set; } 
+        public string? IyzicoResult { get; set; }
+        public int? ProcessId { get; set; }
         [JsonIgnore] public bool IsSuccess => ErrorMessage == null || ErrorMessage.Count == 0;
         [JsonIgnore] public bool IsFail => !IsSuccess;
         [JsonIgnore] public HttpStatusCode Status { get; set; }
@@ -79,6 +81,24 @@ namespace InveonBootcamp.Business
             {
                 Message = message,  
                 Status = status
+            };
+        }
+        public static ServiceResult Success(string message, string iyzicoResult, HttpStatusCode status = HttpStatusCode.OK)
+        {
+            return new ServiceResult()
+            {
+                Message = message,
+                Status = status,
+                IyzicoResult = iyzicoResult
+            };
+        }
+        public static ServiceResult Success(string message, int processId, HttpStatusCode status = HttpStatusCode.OK)
+        {
+            return new ServiceResult()
+            {
+                Message = message,
+                Status = status,
+                ProcessId = processId
             };
         }
 
