@@ -505,3 +505,17 @@
 2025-01-05 06:10:19.504 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
 2025-01-05 06:10:19.545 +03:00 [INF] Response Message: Kurslar başarıyla getirildi., ErrorMessage: No error message
 2025-01-05 06:10:19.556 +03:00 [INF] Response Message: Kullanıcı başarıyla bulundu., ErrorMessage: No error message
+2025-01-05 14:28:18.416 +03:00 [INF] Response Message: Kullanıcı başarıyla kaydedildi., ErrorMessage: No error message
+2025-01-05 14:28:56.440 +03:00 [INF] [Error] HTTP POST - 500: Error Message - No IUserTwoFactorTokenProvider<TUser> named 'Default' is registered. (in 163.5695 ms.)
+2025-01-05 14:33:55.732 +03:00 [INF] Response Message: Yeni şifre e-posta adresinize gönderildi., ErrorMessage: No error message
+2025-01-05 14:34:43.358 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 14:45:32.323 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 14:45:59.500 +03:00 [INF] Response Message: Sipariş başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 14:46:23.609 +03:00 [INF] Response Message: Ödeme başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 14:53:06.271 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 14:53:50.319 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message
+2025-01-05 14:55:59.971 +03:00 [INF] Response Message: No message, ErrorMessage: No error message
+2025-01-05 14:56:17.523 +03:00 [INF] [Error] HTTP POST - 500: Error Message - No sign-out authentication handlers are registered. Did you forget to call AddAuthentication().AddCookie("Identity.Application",...)? (in 150.0296 ms.)
+2025-01-05 14:56:33.258 +03:00 [INF] Response Message: No message, ErrorMessage: No error message
+2025-01-05 14:57:33.993 +03:00 [INF] Response Message: Başarıyla giriş yapıldı., ErrorMessage: No error message
+2025-01-05 14:58:35.437 +03:00 [INF] Response Message: Kurs başarıyla oluşturuldu., ErrorMessage: No error message

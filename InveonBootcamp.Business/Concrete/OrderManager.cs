@@ -17,7 +17,14 @@ using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class OrderManager(IOrderDal orderDal, UserManager<User> userManager, ICourseDal courseDal, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : IOrderService
+    public class OrderManager(
+        IOrderDal orderDal,
+        UserManager<User> userManager,
+        IMailService mailService,
+        IMapper mapper,
+        IUnitOfWork unitOfWork,
+        IHttpContextAccessor httpContextAccessor
+        ) : IOrderService
     {
         public async Task<ServiceResult> DeleteAsync(int id)
         {
@@ -137,6 +144,22 @@ namespace InveonBootcamp.Business.Concrete
             var newOrder = mapper.Map<Order>(request);
             await unitOfWork.OrderDal.InsertAsync(newOrder); // Siparişi ekliyoruz
             await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz
+
+            var user = await userManager.FindByIdAsync(userId);
+            var emailSubject = "Sipariş Onayı";
+            var emailBody = $"<h2>Merhaba, {user.UserName}!</h2>" +
+                            "<p><strong>Siparişiniz başarıyla oluşturulmuştur.</strong></p>" +
+                            $"<p>Sipariş Detayları:</p>" +
+                            $"<p>Kurs: {courseExists.Name}</p>" +
+                            $"<p>Sipariş Tarihi: {DateTime.Now}</p>" +
+                            "<br>" +
+                            "<p><strong>Teşekkür ederiz,</strong><br/>" +
+                            "Destek Ekibi</p>" +
+                            "<footer>" +
+                            "<p style='font-size: 12px;'>Bu e-posta, yalnızca sipariş bilgilendirme amacıyla gönderilmiştir. Eğer bir hata olduğunu düşünüyorsanız, lütfen bizimle iletişime geçin.</p>" +
+                            "</footer>";
+
+            await mailService.SendMessageAsyncViaMassTransit(new[] { user.Email }, emailSubject, emailBody, isBodyHtml: true);
 
             // Başarılı işlem yanıtı
             return ServiceResult.Success("Sipariş başarıyla oluşturuldu.", HttpStatusCode.Created);  // Başarı mesajı

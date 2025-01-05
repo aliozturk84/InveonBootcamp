@@ -5,6 +5,7 @@ using InveonBootcamp.DataAccess.Abstract;
 using InveonBootcamp.DataAccess.Repositories.EntityFramework;
 using InveonBootcamp.Entities.Concrete;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,13 @@ using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class CourseManager(ICourseDal courseDal, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : ICourseService
+    public class CourseManager(
+        ICourseDal courseDal,
+        IMapper mapper,
+        IUnitOfWork unitOfWork,
+        IHttpContextAccessor httpContextAccessor,
+        UserManager<User> userManager,
+        IMailService mailService) : ICourseService
     {
         public async Task<ServiceResult> DeleteAsync(int id)
         {
@@ -109,6 +116,21 @@ namespace InveonBootcamp.Business.Concrete
             await unitOfWork.CourseDal.InsertAsync(newCourse); // UnitOfWork ile veri ekleme işlemi
 
             await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz
+
+            var user = await userManager.FindByIdAsync(userId);
+            var emailSubject = "Kurs Oluşturma Onayı";
+            var emailBody = $"<h2>Merhaba, {user.UserName}!</h2>" +
+                            "<p><strong>Kursunuz başarıyla oluşturulmuştur.</strong></p>" +
+                            $"<p>Kurs Adı: {newCourse.Name}</p>" +
+                            $"<p>Oluşturulma Tarihi: {DateTime.Now}</p>" +
+                            "<br>" +
+                            "<p><strong>Teşekkür ederiz,</strong><br/>" +
+                            "Destek Ekibi</p>" +
+                            "<footer>" +
+                            "<p style='font-size: 12px;'>Bu e-posta, yalnızca bilgilendirme amacıyla gönderilmiştir. Eğer bir hata olduğunu düşünüyorsanız, lütfen bizimle iletişime geçin.</p>" +
+            "</footer>";
+
+            await mailService.SendMessageAsyncViaMassTransit(new[] { user.Email }, emailSubject, emailBody, isBodyHtml: true);
 
             return ServiceResult.Success("Kurs başarıyla oluşturuldu.", HttpStatusCode.Created);
         }

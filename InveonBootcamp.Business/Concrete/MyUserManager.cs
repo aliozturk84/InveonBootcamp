@@ -9,6 +9,7 @@ using MassTransit;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Serilog;
 using System.Net;
 using System.Security.Claims;
 
@@ -225,24 +226,72 @@ namespace InveonBootcamp.Business.Concrete
             return ServiceResult.Success("Kullanıcı başarıyla güncellendi.", HttpStatusCode.OK);
         }
 
-
-
-
-        public async Task<ServiceResult> ForgotPasswordAsync(string email)
+        public async Task<ServiceResult> ForgotPasswordAsync(ResetPasswordRequest email)
         {
-            var user = await userManager.FindByEmailAsync(email);
+            // Kullanıcıyı email ile bul
+            var user = await userManager.Users.FirstOrDefaultAsync(c => c.Email == email.Email);
+
             if (user == null)
             {
                 return ServiceResult.Fail("Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
             }
 
-            var token = await userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = $"https://example.com/reset-password?token={token}"; // Burada şifre sıfırlama linkini oluşturuyorsunuz.
+            // Yeni rastgele bir şifre oluştur
+            var newPassword = GenerateRandomPassword();
 
-            // E-posta gönderme işlemi yapılacak burada
-            // Örneğin, bir e-posta gönderici servisi kullanarak `resetLink` gönderilebilir
+            // Şifre sıfırlama tokeni al
+            var resetToken = await userManager.GeneratePasswordResetTokenAsync(user);
 
-            return ServiceResult.Success("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.", HttpStatusCode.OK);
+            // Şifreyi sıfırla
+            var resetResult = await userManager.ResetPasswordAsync(user, resetToken, newPassword);
+            if (!resetResult.Succeeded)
+            {
+                return ServiceResult.Fail("Şifre sıfırlama işlemi başarısız.", HttpStatusCode.InternalServerError);
+            }
+
+            // Yeni şifreyi kullanıcıya e-posta ile gönder
+            var emailSubject = "Şifre Sıfırlama";
+            var emailBody = $"<h2>Merhaba, {user.UserName}!</h2>" +
+                            "<p><strong>Şifreniz başarıyla sıfırlanmıştır.</strong></p>" +
+                            $"<p>Yeni şifreniz: <strong>{newPassword}</strong></p>" +
+                            "<p>Giriş yaptıktan sonra lütfen şifrenizi değiştirin.</p>" +
+                            "<br>" +
+                            "<p><strong>Teşekkür ederiz,</strong><br/>" +
+                            "Destek Ekibi</p>" +
+                            "<footer>" +
+                            "<p style='font-size: 12px;'>Bu e-posta, yalnızca şifre sıfırlama işleminiz için gönderilmiştir. Eğer bir hata olduğunu düşünüyorsanız, lütfen bizimle iletişime geçin.</p>" +
+                            "</footer>";
+
+            await mailService.SendMessageAsyncViaMassTransit(new[] { email.Email }, emailSubject, emailBody, isBodyHtml: true);
+
+            return ServiceResult.Success("Yeni şifre e-posta adresinize gönderildi.", HttpStatusCode.OK);
         }
+
+        private string GenerateRandomPassword()
+        {
+            // Rastgele bir şifre oluştur
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, 12) // Şifrenin uzunluğu 12 karakter
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+
+        //public async Task<ServiceResult> ForgotPasswordAsync(string email)
+        //{
+        //    var user = await userManager.FindByEmailAsync(email);
+        //    if (user == null)
+        //    {
+        //        return ServiceResult.Fail("Kullanıcı bulunamadı.", HttpStatusCode.NotFound);
+        //    }
+
+        //    var token = await userManager.GeneratePasswordResetTokenAsync(user);
+        //    var resetLink = $"https://example.com/reset-password?token={token}"; // Burada şifre sıfırlama linkini oluşturuyorsunuz.
+
+        //    // E-posta gönderme işlemi yapılacak burada
+        //    // Örneğin, bir e-posta gönderici servisi kullanarak `resetLink` gönderilebilir
+
+        //    return ServiceResult.Success("Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.", HttpStatusCode.OK);
+        //}
     }
 }

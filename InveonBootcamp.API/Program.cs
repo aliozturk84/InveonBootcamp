@@ -63,7 +63,9 @@ builder.Services.AddIdentityCore<User>(opt =>
 })
         .AddRoles<Role>()
         .AddSignInManager<SignInManager<User>>()
-        .AddEntityFrameworkStores<AppDbContext>();
+        .AddEntityFrameworkStores<AppDbContext>()
+        .AddDefaultTokenProviders(); // Bu satýrý ekleyin
+
 
 builder.Services.AddScoped<ICourseService, CourseManager>();
 builder.Services.AddScoped<IOrderService, OrderManager>();

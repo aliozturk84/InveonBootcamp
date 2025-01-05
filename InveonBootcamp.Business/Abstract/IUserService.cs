@@ -20,6 +20,7 @@ namespace InveonBootcamp.Business.Abstract
         Task<ServiceResult> DeleteUserAsync(int userId);
         Task<ServiceResult<GetUserByIdResponse>> GetUserByIdAsync(int userId);
         Task<ServiceResult> UpdateCurrentUserAsync(UpdateCurrentUserRequest request, ClaimsPrincipal currentUser);
+        Task<ServiceResult> ForgotPasswordAsync(ResetPasswordRequest email);
 
     }
 }

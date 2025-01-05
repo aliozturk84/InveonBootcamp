@@ -22,6 +22,12 @@ namespace InveonBootcamp.API.Controllers
             CreateActionResult(await userService.LoginAsync(login));
 
         [AllowAnonymous]
+        [HttpPost("forgot-password")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ResetPasswordRequest email) =>
+            CreateActionResult(await userService.ForgotPasswordAsync(email));
+
+
+        [AllowAnonymous]
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest register) =>
             CreateActionResult(await userService.RegisterAsync(register));
@@ -67,6 +73,8 @@ namespace InveonBootcamp.API.Controllers
                 Errors = result.ErrorMessage
             });
         }
+
+
 
     }
 }
