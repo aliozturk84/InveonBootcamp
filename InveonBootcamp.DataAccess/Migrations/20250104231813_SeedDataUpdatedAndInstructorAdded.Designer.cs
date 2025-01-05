@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InveonBootcamp.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241230223214_SeedDataInputChange")]
-    partial class SeedDataInputChange
+    [Migration("20250104231813_SeedDataUpdatedAndInstructorAdded")]
+    partial class SeedDataUpdatedAndInstructorAdded
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace InveonBootcamp.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("InstructorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -50,6 +53,8 @@ namespace InveonBootcamp.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("InstructorId");
+
                     b.ToTable("Courses");
 
                     b.HasData(
@@ -58,6 +63,7 @@ namespace InveonBootcamp.DataAccess.Migrations
                             Id = 1,
                             Category = "Programming",
                             Description = "Learn the basics of programming using C#.",
+                            InstructorId = 3,
                             Name = "Introduction to Programming",
                             Price = 199.99m
                         },
@@ -66,16 +72,126 @@ namespace InveonBootcamp.DataAccess.Migrations
                             Id = 2,
                             Category = "Programming",
                             Description = "Deep dive into Java for experienced developers.",
+                            InstructorId = 3,
                             Name = "Advanced Java",
                             Price = 299.99m
                         },
                         new
                         {
                             Id = 3,
+                            Category = "Programming",
+                            Description = "Master the fundamentals of Python programming.",
+                            InstructorId = 3,
+                            Name = "Python for Beginners",
+                            Price = 149.99m
+                        },
+                        new
+                        {
+                            Id = 4,
                             Category = "Web Development",
                             Description = "Build dynamic websites using ASP.NET Core.",
+                            InstructorId = 3,
                             Name = "Web Development with ASP.NET",
                             Price = 249.99m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Category = "Web Development",
+                            Description = "Learn the basics of React.js for front-end development.",
+                            InstructorId = 3,
+                            Name = "React for Beginners",
+                            Price = 199.99m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Category = "Web Development",
+                            Description = "Master front-end and back-end development skills.",
+                            InstructorId = 3,
+                            Name = "Full-Stack Development",
+                            Price = 399.99m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Category = "Data Science",
+                            Description = "Explore the world of data science and machine learning.",
+                            InstructorId = 3,
+                            Name = "Introduction to Data Science",
+                            Price = 299.99m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Category = "Data Science",
+                            Description = "Learn how to create stunning data visualizations using Python.",
+                            InstructorId = 3,
+                            Name = "Data Visualization with Python",
+                            Price = 249.99m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Category = "Data Science",
+                            Description = "Dive into the foundations of machine learning.",
+                            InstructorId = 3,
+                            Name = "Machine Learning Basics",
+                            Price = 349.99m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Category = "Cloud Computing",
+                            Description = "Get started with Amazon Web Services for cloud computing.",
+                            InstructorId = 3,
+                            Name = "Introduction to AWS",
+                            Price = 299.99m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Category = "Cloud Computing",
+                            Description = "Learn the basics of Microsoft Azure cloud platform.",
+                            InstructorId = 3,
+                            Name = "Microsoft Azure Essentials",
+                            Price = 279.99m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Category = "Cloud Computing",
+                            Description = "Understand the fundamentals of Google Cloud Platform.",
+                            InstructorId = 3,
+                            Name = "Google Cloud Platform Fundamentals",
+                            Price = 259.99m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Category = "Cybersecurity",
+                            Description = "Learn the fundamentals of securing digital systems.",
+                            InstructorId = 3,
+                            Name = "Cybersecurity Basics",
+                            Price = 199.99m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Category = "Cybersecurity",
+                            Description = "Understand ethical hacking principles and techniques.",
+                            InstructorId = 3,
+                            Name = "Ethical Hacking",
+                            Price = 349.99m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Category = "Cybersecurity",
+                            Description = "Master the concepts of securing network infrastructure.",
+                            InstructorId = 3,
+                            Name = "Network Security",
+                            Price = 299.99m
                         });
                 });
 
@@ -152,21 +268,21 @@ namespace InveonBootcamp.DataAccess.Migrations
                             Id = 1,
                             Amount = 199.99m,
                             OrderId = 1,
-                            PaymentDate = new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9139)
+                            PaymentDate = new DateTime(2025, 1, 4, 23, 18, 12, 848, DateTimeKind.Utc).AddTicks(8560)
                         },
                         new
                         {
                             Id = 2,
                             Amount = 299.99m,
                             OrderId = 2,
-                            PaymentDate = new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9141)
+                            PaymentDate = new DateTime(2025, 1, 4, 23, 18, 12, 848, DateTimeKind.Utc).AddTicks(8562)
                         },
                         new
                         {
                             Id = 3,
                             Amount = 249.99m,
                             OrderId = 3,
-                            PaymentDate = new DateTime(2024, 12, 30, 22, 32, 13, 693, DateTimeKind.Utc).AddTicks(9142)
+                            PaymentDate = new DateTime(2025, 1, 4, 23, 18, 12, 848, DateTimeKind.Utc).AddTicks(8564)
                         });
                 });
 
@@ -377,6 +493,17 @@ namespace InveonBootcamp.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("InveonBootcamp.Entities.Concrete.Course", b =>
+                {
+                    b.HasOne("InveonBootcamp.Entities.Concrete.User", "Instructor")
+                        .WithMany("Courses")
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Instructor");
+                });
+
             modelBuilder.Entity("InveonBootcamp.Entities.Concrete.Order", b =>
                 {
                     b.HasOne("InveonBootcamp.Entities.Concrete.Course", "Course")
@@ -471,6 +598,8 @@ namespace InveonBootcamp.DataAccess.Migrations
 
             modelBuilder.Entity("InveonBootcamp.Entities.Concrete.User", b =>
                 {
+                    b.Navigation("Courses");
+
                     b.Navigation("Orders");
                 });
 #pragma warning restore 612, 618

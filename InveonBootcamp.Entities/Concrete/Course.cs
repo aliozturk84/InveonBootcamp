@@ -16,8 +16,8 @@ namespace InveonBootcamp.Entities.Concrete
         public decimal Price { get; set; }
         public string Category { get; set; }
 
-        //public int InstructorId { get; set; }
-        //public User Instructor{ get; set; }
+        public int InstructorId { get; set; }
+        public User Instructor { get; set; }
 
         // Navigation Property: Kursun siparişleri
         [JsonIgnore]

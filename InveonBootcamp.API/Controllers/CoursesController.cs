@@ -4,16 +4,36 @@ using InveonBootcamp.Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using InveonBootcamp.Business;
+using System.Net;
+using System.Security.Claims;
 
 namespace InveonBootcamp.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CoursesController(ICourseService courseService) : CustomControllerBase
+    public class CoursesController(ICourseService courseService, IHttpContextAccessor httpContextAccessor) : CustomControllerBase
     {
         [HttpGet]
         public async Task<IActionResult> GetAll() =>
             CreateActionResult(await courseService.GetAllAsync());
+
+        [Authorize(Roles = "Eğitmen")]
+        [HttpGet("GetUsersCourses")]
+        public async Task<IActionResult> GetUsersCourses()
+        {
+            var userId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                throw new InvalidOperationException("Giriş yapınız.");
+            }
+            
+
+            var result = await courseService.GetAllAsync(x=>x.InstructorId==Convert.ToInt32(userId));
+
+
+            return CreateActionResult(result);
+        }
 
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id) =>

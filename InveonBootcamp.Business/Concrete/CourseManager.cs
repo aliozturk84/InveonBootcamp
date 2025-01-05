@@ -4,17 +4,19 @@ using InveonBootcamp.Business.DTOs.Requests.Course;
 using InveonBootcamp.DataAccess.Abstract;
 using InveonBootcamp.DataAccess.Repositories.EntityFramework;
 using InveonBootcamp.Entities.Concrete;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace InveonBootcamp.Business.Concrete
 {
-    public class CourseManager(ICourseDal courseDal, IMapper mapper, IUnitOfWork unitOfWork) : ICourseService
+    public class CourseManager(ICourseDal courseDal, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : ICourseService
     {
         public async Task<ServiceResult> DeleteAsync(int id)
         {
@@ -102,6 +104,8 @@ namespace InveonBootcamp.Business.Concrete
             }
 
             var newCourse = mapper.Map<Course>(request);
+            var userId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            newCourse.InstructorId = Convert.ToInt32(userId);
             await unitOfWork.CourseDal.InsertAsync(newCourse); // UnitOfWork ile veri ekleme işlemi
 
             await unitOfWork.CompleteAsync(); // Değişiklikleri kaydediyoruz

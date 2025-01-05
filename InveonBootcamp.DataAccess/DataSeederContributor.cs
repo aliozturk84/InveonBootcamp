@@ -27,7 +27,8 @@ namespace InveonBootcamp.DataAccess
                     Name = "Introduction to Programming",
                     Description = "Learn the basics of programming using C#.",
                     Price = 199.99m,
-                    Category = "Programming"
+                    Category = "Programming",
+                    InstructorId = 3,
                 },
                 new Course
                 {
@@ -35,15 +36,133 @@ namespace InveonBootcamp.DataAccess
                     Name = "Advanced Java",
                     Description = "Deep dive into Java for experienced developers.",
                     Price = 299.99m,
-                    Category = "Programming"
+                    Category = "Programming",
+                    InstructorId = 3,
                 },
                 new Course
                 {
                     Id = 3,
+                    Name = "Python for Beginners",
+                    Description = "Master the fundamentals of Python programming.",
+                    Price = 149.99m,
+                    Category = "Programming",
+                    InstructorId = 3,
+                },
+
+                // Web Development
+                new Course
+                {
+                    Id = 4,
                     Name = "Web Development with ASP.NET",
                     Description = "Build dynamic websites using ASP.NET Core.",
                     Price = 249.99m,
-                    Category = "Web Development"
+                    Category = "Web Development",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 5,
+                    Name = "React for Beginners",
+                    Description = "Learn the basics of React.js for front-end development.",
+                    Price = 199.99m,
+                    Category = "Web Development",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 6,
+                    Name = "Full-Stack Development",
+                    Description = "Master front-end and back-end development skills.",
+                    Price = 399.99m,
+                    Category = "Web Development",
+                    InstructorId = 3,
+                },
+
+                // Data Science
+                new Course
+                {
+                    Id = 7,
+                    Name = "Introduction to Data Science",
+                    Description = "Explore the world of data science and machine learning.",
+                    Price = 299.99m,
+                    Category = "Data Science",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 8,
+                    Name = "Data Visualization with Python",
+                    Description = "Learn how to create stunning data visualizations using Python.",
+                    Price = 249.99m,
+                    Category = "Data Science",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 9,
+                    Name = "Machine Learning Basics",
+                    Description = "Dive into the foundations of machine learning.",
+                    Price = 349.99m,
+                    Category = "Data Science",
+                    InstructorId = 3,
+                },
+
+                // Cloud Computing
+                new Course
+                {
+                    Id = 10,
+                    Name = "Introduction to AWS",
+                    Description = "Get started with Amazon Web Services for cloud computing.",
+                    Price = 299.99m,
+                    Category = "Cloud Computing",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 11,
+                    Name = "Microsoft Azure Essentials",
+                    Description = "Learn the basics of Microsoft Azure cloud platform.",
+                    Price = 279.99m,
+                    Category = "Cloud Computing",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 12,
+                    Name = "Google Cloud Platform Fundamentals",
+                    Description = "Understand the fundamentals of Google Cloud Platform.",
+                    Price = 259.99m,
+                    Category = "Cloud Computing",
+                    InstructorId = 3,
+                },
+
+                // Cybersecurity
+                new Course
+                {
+                    Id = 13,
+                    Name = "Cybersecurity Basics",
+                    Description = "Learn the fundamentals of securing digital systems.",
+                    Price = 199.99m,
+                    Category = "Cybersecurity",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 14,
+                    Name = "Ethical Hacking",
+                    Description = "Understand ethical hacking principles and techniques.",
+                    Price = 349.99m,
+                    Category = "Cybersecurity",
+                    InstructorId = 3,
+                },
+                new Course
+                {
+                    Id = 15,
+                    Name = "Network Security",
+                    Description = "Master the concepts of securing network infrastructure.",
+                    Price = 299.99m,
+                    Category = "Cybersecurity",
+                    InstructorId = 3,
                 }
             );
         }

@@ -29,7 +29,8 @@ namespace InveonBootcamp.Business.TokenOperations
         }
         public async Task<Token> CreateAccessToken(User user)
         {
-            var isInstructor = await _userManager.GetRolesAsync(user);
+            var role = await _userManager.GetRolesAsync(user);
+            var isInstructor = role.Any(x=>x.Contains("Eğitmen"))? true : false;
 
             Token token = new Token();
             var claims = new Claim[]
@@ -37,9 +38,10 @@ namespace InveonBootcamp.Business.TokenOperations
                new Claim("userEmail",$"{user.Email}"),
                new Claim("userId",$"{user.Id}"),
                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-               new Claim(ClaimTypes.Role, "Eğitmen")
+               isInstructor ? new Claim(ClaimTypes.Role, "Eğitmen") : null
 
-            };
+            }.Where(c=>c!=null).ToArray();
+
             SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Token:SecurityKey"]));
             SigningCredentials credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
