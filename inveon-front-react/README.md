@@ -65,8 +65,10 @@ Projemin tüm ilişkilerini aşağıdaki görselde bulabilirsiniz.
 ### Proje Açıklama Videosu
 
 Projemi tüm hatlarıyla açıkladığım videoma aşağıdaki linkten ulaşabilirsiniz. İyi seyirler!  
-[YouTube Video Linki](https://www.youtube.com/watch?v=2ORzq5wVovE)
 
+<a href="https://www.youtube.com/watch?v=2ORzq5wVovE" target="_blank">
+    <img src="https://img.youtube.com/vi/2ORzq5wVovE/0.jpg" alt="Proje Açıklama Videosu" width="600">
+</a>
 # Projede Kullanılan Teknolojiler
 
 ## Backend
