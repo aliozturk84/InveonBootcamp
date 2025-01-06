@@ -115,7 +115,7 @@ git switch --track origin/dev/backend
 
 ```
 
-Gerekli migrationları alıp projenin backendini çalıştırabilirsiniz fakat migrationlar esnasında herhangi bir sorunla karşılaşmanız halinde aşağıdaki adımları takip edebilirsiniz. (Daha önce sıfırdan başka bilgisayarda bir clone alıp aşağıdaki tüm aşamaları sırasıyla yaparak projeyi sorunsuz şekilde çalıştırdım)
+Gerekli migrationları alıp projenin backendini çalıştırabilirsiniz fakat migrationlar esnasında herhangi bir sorunla karşılaşmanız halinde aşağıdaki adımları takip edebilirsiniz.
 
 ## Migration ve Backend Kurulumu
 
@@ -124,7 +124,7 @@ Gerekli migration'ları alıp backend'i çalıştırabilirsiniz. Ancak migration
 1. **Proje Başlangıç Hazırlığı**:
     - Projeyi temiz bir ortamda klonladığınızdan emin olun.
 2. **Veritabanı Bağlantısı**:
-    - `appsettings.json` dosyasından doğru veritabanı bağlantı bilgilerini kontrol edin.
+    - `appsettings.Development.json` dosyasından doğru veritabanı bağlantı bilgilerini kontrol edin.
 3. **Migration Oluşturma ve Uygulama**:
     - Migrationlar esnasında herhangi bir sorunla karşılaşırsanız Proje Kurulum ve Yapılandırma Adımları ile sorunuzu çözebilirsiniz.
     - Bu adımları daha önce başka bir bilgisayarda sıfırdan başlayarak test ettim ve sorunsuz bir şekilde backend çalıştırıldı. Aynı adımları takip ederek sorunsuz bir kurulum yapabilirsiniz.
@@ -139,25 +139,20 @@ Bu adımları izleyerek projeyi yapılandırabilir ve gerekli değişiklikleri u
     - Projenizde yer alan Migrations klasörünü tamamen silin. Bu, veritabanı migration'larını sıfırdan oluşturmak için gereklidir.
 2. *Course Entity Değişikliği*
     - Course entity'sinde aşağıdaki satırı yoruma alın:
-    csharp
     public User Instructor { get; set; }
 3. *AppDbContext Değişikliği*
     - AppDbContext sınıfında 28 ile 54. satır arasındaki kodları yoruma alın.
 4. *Program.cs Değişikliği*
     - Program.cs dosyasında şu satırı (145. satır) yoruma alın:
-    csharp
     await DataInitializer.SeedRolesAndUsersAsync(roleManager, userManager);
 5. *Veritabanını Güncelleme*
     - Terminalden InveonBootcamp.DataAccess klasörüne gidin ve aşağıdaki komutları çalıştırın:
         1. Yeni migration eklemek için:
-        bash
         dotnet ef migrations add Initial -s ../InveonBootcamp.API
         2. Veritabanını güncellemek için:
-        bash
         dotnet ef database update -s ../InveonBootcamp.API
 6. *Program.cs'i Düzenleme*
     - Program.cs dosyasındaki 145. satırı yorumdan çıkarın:
-    csharp
     await DataInitializer.SeedRolesAndUsersAsync(roleManager, userManager);
 7. *AppDbContext'i Düzenleme*
     - AppDbContext sınıfında 28. satırı yorumdan çıkarın ve değişiklikleri kaydedin ve programı koşturun.
@@ -171,13 +166,11 @@ Bu adımları izleyerek projeyi yapılandırabilir ve gerekli değişiklikleri u
         - Programı çalıştırın.
 9. *Course Entity'sini Düzenleme*
     - Course entity'sindeki 20. satırı yorumdan çıkarın:
-    csharp
     public User Instructor { get; set; }
 10. *AppDbContext'i Geri Düzenleme*
     - AppDbContext sınıfındaki 29-54. satırları yorumdan çıkarın.
     - 
         1. satırda DeleteBehavior'ı şu şekilde değiştirin:
-        csharp
         .DeleteBehavior(DeleteBehavior.NoAction);
 11. *Yeni Migration Ekleme*
     - Yeni migration eklemek için şu komutu çalıştırın:
