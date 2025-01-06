@@ -29,8 +29,8 @@ Kullanıcı dostu ve responsive (mobil uyumlu) bir tasarıma sahiptir.
 
 ## JWT Entegrasyonu
 
-- Kullanıcı giriş yaptıktan sonra **JWT token** örneğin, `localStorage` ya da state yönetiminde saklanmalıdır.
-- API isteklerinde bu token ile kimlik doğrulama sağlanmalıdır.
+- Kullanıcı giriş yaptıktan sonra **JWT token** , `localStorage` ile saklanmaktadır.
+- API isteklerinde bu token ile kimlik doğrulama yapılmaktadır.
 
 ---
 
@@ -203,19 +203,19 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ## Kullanıcı İşlemleri
 
 ### Giriş Sayfası
-![Giriş](images/1login.jpg)
+![Giriş](images/1login.JPG)
 - Kullanıcıların siteye giriş yapabileceği sayfa.
 
 ### Kayıt Ol Sayfası
-![Kayıt Ol](images/2register.jpg)
+![Kayıt Ol](images/2register.JPG)
 - Kullanıcıların yeni bir hesap oluşturabileceği sayfa.
 
 ### Şifre Sıfırlama Sayfası
-![Şifre Sıfırlama](images/3resetPassword.jpg)
+![Şifre Sıfırlama](images/3resetPassword.JPG)
 - Kullanıcıların şifre sıfırlama talebi gönderebileceği sayfa.
 
 ### Girişten Sonra Karşılama Sayfası
-![Kullanıcı Giriş](images/4userLogin.jpg)
+![Kullanıcı Giriş](images/4userLogin.JPG)
 - Kullanıcı giriş yaptıktan sonra gelen ana sayfa ve Toastify mesajları.
 
 ---
@@ -223,19 +223,19 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ## Kullanıcı Profili ve Kurslar
 
 ### Profil Bilgileri Sayfası
-![Profil Bilgileri](images/5userProfilim.jpg)
+![Profil Bilgileri](images/5userProfilim.JPG)
 - Kullanıcının navbardan erişebileceği profil bilgileri.
 
 ### Satın Alınan Kurslar Sayfası
-![Satın Alınan Kurslar](images/5userSatinAlinanlar.jpg)
+![Satın Alınan Kurslar](images/5userSatinAlinanlar.JPG)
 - Kullanıcının satın aldığı kursları görüntülediği sayfa.
 
 ### Kurs Arama Sayfası
-![Kurs Arama](images/6pythonArama.jpg)
+![Kurs Arama](images/6pythonArama.JPG)
 - Kullanıcıların kursları isimlerine ve kategorilerine göre arama yapabileceği sayfa.
 
 ### Kurs Detayları Sayfası
-![Kurs Detayları](images/7detaylariGor.jpg)
+![Kurs Detayları](images/7detaylariGor.JPG)
 - Kursun \"Detayları Gör\" butonuna tıklandığında açılan sayfa.
 
 ---
@@ -243,19 +243,19 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ## Ödeme Süreci
 
 ### Ödeme Bilgileri Modalı
-![Ödeme Bilgileri](images/8odemeBilgileriModali.jpg)
+![Ödeme Bilgileri](images/8odemeBilgileriModali.JPG)
 - Kullanıcı \"Satın Al\" butonuna tıkladığında açılan ödeme bilgileri ekranı.
 
 ### İyzico Ödeme Sayfası
-![İyzico Ödeme](images/9odemeyiTamamlaIyzicoYonlendirmesi.jpg)
+![İyzico Ödeme](images/9odemeyiTamamlaIyzicoYonlendirmesi.JPG)
 - \"Ödemeyi Tamamla\" butonuna tıklandığında yönlendirilen İyzico ödeme ekranı.
 
 ### SMS Doğrulama
-![SMS Doğrulama](images/10smsDogrulamasi.jpg)
+![SMS Doğrulama](images/10smsDogrulamasi.JPG)
 - Ödeme sırasında SMS doğrulama ekranı.
 
 ### İyzico Ödeme Onayı
-![Ödeme Onayı](images/11odemeTamamlandiIyzicoCevap.jpg)
+![Ödeme Onayı](images/11odemeTamamlandiIyzicoCevap.JPG)
 - SMS doğrulama sonrası İyzico'dan gelen ödeme onayı modalı.
 
 ---
@@ -263,15 +263,15 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ## Sipariş ve Eğitmen İşlemleri
 
 ### Sipariş Geçmişi
-![Sipariş Geçmişi](images/12satinAldigimKurslarım.jpg)
+![Sipariş Geçmişi](images/12satinAldigimKurslarım.JPG)
 - Kullanıcının satın aldığı kursların sipariş geçmişi sayfası.
 
 ### Eğitmen Paneli
-![Eğitmen Paneli](images/13egitmenPaneliOlusturduguKurslar.jpg)
+![Eğitmen Paneli](images/13egitmenPaneliOlusturduguKurslar.JPG)
 - Eğitmenlerin oluşturduğu kursları görüntüleyebileceği ve yeni kurslar ekleyebileceği panel.
 
 ### Kurs Ekleme Modalı
-![Kurs Ekleme](images/14egitmenKursEkleme.jpg)
+![Kurs Ekleme](images/14egitmenKursEkleme.JPG)
 - Eğitmenlerin yeni kurs eklemek için kullandığı modal ekran.
 
 ---
@@ -279,19 +279,19 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ## E-Posta İşlemleri
 
 ### Kayıt Başarılı Maili
-![Kayıt Başarılı](images/15kayitBasarili.jpg)
+![Kayıt Başarılı](images/15kayitBasarili.JPG)
 - Kullanıcının kayıt olduğu maile otomatik olarak gönderilen kayıt başarılı maili.
 
 ### Şifre Sıfırlama Maili
-![Şifre Sıfırlama Maili](images/16sifreSifirlama.jpg)
+![Şifre Sıfırlama Maili](images/16sifreSifirlama.JPG)
 - Şifre sıfırlama isteği sonrası kullanıcıya gönderilen yeni şifre maili.
 
 ### Sipariş Onayı Maili
-![Sipariş Onayı](images/17siparisOnayi.jpg)
+![Sipariş Onayı](images/17siparisOnayi.JPG)
 - Kullanıcının siparişi sonrası gönderilen onay maili.
 
 ### Kurs Oluşturma Onayı Maili
-![Kurs Oluşturma Onayı](images/18kursOlusturmaOnayi.jpg)
+![Kurs Oluşturma Onayı](images/18kursOlusturmaOnayi.JPG)
 - Eğitmen tarafından kurs oluşturulduktan sonra gönderilen onay maili.
 
 ---
@@ -299,11 +299,11 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ## Diğer İşlemler
 
 ### MassTransit Paneli
-![MassTransit Paneli](images/19massTransitPanel.jpg)
+![MassTransit Paneli](images/19massTransitPanel.JPG)
 - MassTransitRabbitMQ ile email servislerinden gelen mesajların kuyruğa aktarıldığı panelin istatistikleri.
 
 ### JWT Authentication
-![JWT Authentication](images/20bearerAuth.jpg)
+![JWT Authentication](images/20bearerAuth.JPG)
 - JWT Access Token ile kimlik doğrulama işlemlerinin gerçekleştirildiği sayfa.
 
 ---
@@ -311,89 +311,89 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ## API Testleri ve Endpointler
 
 ### Kurs İşlemleri
-![Kursları Listeleme](images/21getApiCourses.jpg)
+![Kursları Listeleme](images/21getApiCourses.JPG)
 - **21getApiCourses**: Tüm kursları listeleme endpointi.
 
-![Yeni Kurs Ekleme](images/22postApiCourses.jpg)
+![Yeni Kurs Ekleme](images/22postApiCourses.JPG)
 - **22postApiCourses**: Yeni bir kurs oluşturma endpointi.
 
-![Kullanıcının Kursları](images/23getApiCoursesGetUserCourses.jpg)
+![Kullanıcının Kursları](images/23getApiCoursesGetUserCourses.JPG)
 - **23getApiCoursesGetUserCourses**: Kullanıcının kurslarını listeleme endpointi.
 
-![Belirli Kursu Getir](images/24getApiCoursesId.jpg)
+![Belirli Kursu Getir](images/24getApiCoursesId.JPG)
 - **24getApiCoursesId**: Belirli bir kursu ID ile getirme endpointi.
 
-![Kurs Güncelleme](images/25putApiCoursesId.jpg)
+![Kurs Güncelleme](images/25putApiCoursesId.JPG)
 - **25putApiCoursesId**: Mevcut bir kursu güncelleme endpointi.
 
-![Kategoriye Göre Kurslar](images/26apiCoursesGetCoursesByCategoryProgramming.jpg)
+![Kategoriye Göre Kurslar](images/26apiCoursesGetCoursesByCategoryProgramming.JPG)
 - **26apiCoursesGetCoursesByCategoryProgramming**: Programlama kategorisindeki kursları getirme.
 
-![İsme Göre Kurslar](images/27apiCOursesGetCoursesByNamePython.jpg)
+![İsme Göre Kurslar](images/27apiCOursesGetCoursesByNamePython.JPG)
 - **27apiCOursesGetCoursesByNamePython**: Python isimli kursları arama.
 
-![Kurs Silme](images/28deleteApiCoursesId.jpg)
+![Kurs Silme](images/28deleteApiCoursesId.JPG)
 - **28deleteApiCoursesId**: Belirli bir kursu silme.
 
 ---
 
 ### Sipariş İşlemleri
-![Sipariş Listeleme](images/29getApiOrders.jpg)
+![Sipariş Listeleme](images/29getApiOrders.JPG)
 - **29getApiOrders**: Siparişleri listeleme endpointi.
 
-![Yeni Sipariş Ekleme](images/30postApiOrders.jpg)
+![Yeni Sipariş Ekleme](images/30postApiOrders.JPG)
 - **30postApiOrders**: Yeni bir sipariş oluşturma endpointi.
 
-![Belirli Sipariş](images/31getApiOrdersId.jpg)
+![Belirli Sipariş](images/31getApiOrdersId.JPG)
 - **31getApiOrdersId**: Belirli bir siparişi ID ile getirme endpointi.
 
-![Sipariş Güncelleme](images/32putApiOrdersId.jpg)
+![Sipariş Güncelleme](images/32putApiOrdersId.JPG)
 - **32putApiOrdersId**: Sipariş güncelleme endpointi.
 
-![Sipariş Filtreleme](images/33getApiOrdersFilter.jpg)
+![Sipariş Filtreleme](images/33getApiOrdersFilter.JPG)
 - **33getApiOrdersFilter**: Siparişleri filtreleme.
 
-![Kullanıcı Siparişleri](images/34getApiOrdersGetOrdersByUserId.jpg)
+![Kullanıcı Siparişleri](images/34getApiOrdersGetOrdersByUserId.JPG)
 - **34getApiOrdersGetOrdersByUserId**: Kullanıcıya özel siparişleri listeleme.
 
-![Sipariş Silme](images/35deleteApiOrdersId.jpg)
+![Sipariş Silme](images/35deleteApiOrdersId.JPG)
 - **35deleteApiOrdersId**: Sipariş silme endpointi.
 
 ---
 
 ### Ödeme İşlemleri
-![Ödeme Listeleme](images/36getApiPayments.jpg)
+![Ödeme Listeleme](images/36getApiPayments.JPG)
 - **36getApiPayments**: Ödeme işlemlerini listeleme endpointi.
 
-![Yeni Ödeme Ekleme](images/37postApiPayments.jpg)
+![Yeni Ödeme Ekleme](images/37postApiPayments.JPG)
 - **37postApiPayments**: Yeni bir ödeme ekleme endpointi.
 
-![Belirli Ödeme İşlemi](images/38getApiPaymentsId.jpg)
+![Belirli Ödeme İşlemi](images/38getApiPaymentsId.JPG)
 - **38getApiPaymentsId**: Belirli bir ödeme işlemini getirme endpointi.
 
-![Ödeme Güncelleme](images/39putApiPaymentsId.jpg)
+![Ödeme Güncelleme](images/39putApiPaymentsId.JPG)
 - **39putApiPaymentsId**: Ödeme işlemi güncelleme endpointi.
 
-![Ödeme Silme](images/40deleteApiPaymentsId.jpg)
+![Ödeme Silme](images/40deleteApiPaymentsId.JPG)
 - **40deleteApiPaymentsId**: Ödeme işlemini silme endpointi.
 
-![Ödeme Filtreleme](images/41getApiPaymentFilter.jpg)
+![Ödeme Filtreleme](images/41getApiPaymentFilter.JPG)
 - **41getApiPaymentFilter**: Ödeme işlemlerini filtreleme.
 
 ---
 
 ### Kullanıcı İşlemleri
-![Kullanıcı Girişi](images/42postApiUsersLogin.jpg)
+![Kullanıcı Girişi](images/42postApiUsersLogin.JPG)
 - **42postApiUsersLogin**: Kullanıcı girişi endpointi.
 
-![Kullanıcı Kaydı](images/43postApiUsersRegister.jpg)
+![Kullanıcı Kaydı](images/43postApiUsersRegister.JPG)
 - **43postApiUsersRegister**: Yeni kullanıcı kaydı endpointi.
 
-![Kullanıcı Güncelleme](images/44putApiUsersId.jpg)
+![Kullanıcı Güncelleme](images/44putApiUsersId.JPG)
 - **44putApiUsersId**: Kullanıcı bilgilerini güncelleme endpointi.
 
-![Belirli Kullanıcıyı Getir](images/45getApiUsersId.jpg)
+![Belirli Kullanıcıyı Getir](images/45getApiUsersId.JPG)
 - **45getApiUsersId**: Kullanıcı bilgilerini getirme endpointi.
 
-![Kullanıcı Silme](images/46deleteApiUsersId.jpg)
+![Kullanıcı Silme](images/46deleteApiUsersId.JPG)
 - **46deleteApiUsersId**: Kullanıcı hesabını silme endpointi.
