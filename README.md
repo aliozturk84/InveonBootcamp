@@ -226,6 +226,12 @@ Bu rehber, sistemde bulunan tüm özellikleri ve her birinin açıklamalarını 
 ![Kullanıcı Giriş](images/4userLogin.JPG)
 - Kullanıcı giriş yaptıktan sonra gelen ana sayfa ve Toastify mesajları.
 
+### JWT Token Yönetimi
+
+Projede JWT token'ını local storage'da tutuyorum. Bununla ilgili detayları aşağıdaki görselde görebilirsiniz.
+
+![JWT Token Local Storage](./images/48localStorage.JPG)
+
 ---
 
 ## Kullanıcı Profili ve Kurslar
