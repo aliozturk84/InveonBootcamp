@@ -56,6 +56,16 @@ Proje içerisinde ön tanımlı olarak 3 kullanıcı bulunmaktadır. Bu kullanı
 - **Email**: `user3@gmail.com`
 - **Password**: `User123!`
 
+### Proje İlişkileri
+
+Projemin tüm ilişkilerini aşağıdaki görselde bulabilirsiniz.
+
+![Proje İlişkileri](./images/47iliskiler.JPG)
+
+### Proje Açıklama Videosu
+
+Projemi tüm hatlarıyla açıkladığım videoma aşağıdaki linkten ulaşabilirsiniz. İyi seyirler!  
+[YouTube Video Linki](https://www.youtube.com/watch?v=2ORzq5wVovE)
 
 # Projede Kullanılan Teknolojiler
 
@@ -97,12 +107,12 @@ Proje içerisinde ön tanımlı olarak 3 kullanıcı bulunmaktadır. Bu kullanı
 
 Projeyi klonlamak için aşağıdaki komutu terminalinizde çalıştırın:
 
-```bash
+```
 git clone https://github.com/aliozturk84/InveonBootcamp.git
 
 ```
 
-```bash
+```
 cd InveonBootcamp 
 ```
 
@@ -110,7 +120,7 @@ cd InveonBootcamp
 
 Projenin son haline ulaşmak için **backend** branch’ine geçiş yapın:
 
-```bash
+```
 git switch --track origin/dev/backend
 
 ```
@@ -158,10 +168,10 @@ Bu adımları izleyerek projeyi yapılandırabilir ve gerekli değişiklikleri u
     - AppDbContext sınıfında 28. satırı yorumdan çıkarın ve değişiklikleri kaydedin ve programı koşturun.
 8. *Seed Migration Ekleme*
     - Seed migration eklemek için aşağıdaki komutu çalıştırın:
-    bash
+    
     dotnet ef migrations add Seed -s ../InveonBootcamp.API
     - Ardından, veritabanını güncelleyin:
-    bash
+    
     dotnet ef database update -s ../InveonBootcamp.API
         - Programı çalıştırın.
 9. *Course Entity'sini Düzenleme*
@@ -174,10 +184,10 @@ Bu adımları izleyerek projeyi yapılandırabilir ve gerekli değişiklikleri u
         .DeleteBehavior(DeleteBehavior.NoAction);
 11. *Yeni Migration Ekleme*
     - Yeni migration eklemek için şu komutu çalıştırın:
-    bash
+    
     dotnet ef migrations add Instructor -s ../InveonBootcamp.API
     - Son olarak, veritabanını güncelleyin:
-    bash
+    
     dotnet ef database update -s ../InveonBootcamp.API
 12. *Uygulamayı Çalıştırma*
     - Tüm değişiklikleri kaydedin ve uygulamayı çalıştırarak doğrulayın.

@@ -56,6 +56,16 @@ Proje içerisinde ön tanımlı olarak 3 kullanıcı bulunmaktadır. Bu kullanı
 - **Email**: `user3@gmail.com`
 - **Password**: `User123!`
 
+### Proje İlişkileri
+
+Projemin tüm ilişkilerini aşağıdaki görselde bulabilirsiniz.
+
+![Proje İlişkileri](./images/47iliskiler.JPG)
+
+### Proje Açıklama Videosu
+
+Projemi tüm hatlarıyla açıkladığım videoma aşağıdaki linkten ulaşabilirsiniz. İyi seyirler!  
+[YouTube Video Linki](https://www.youtube.com/watch?v=2ORzq5wVovE)
 
 # Projede Kullanılan Teknolojiler
 
